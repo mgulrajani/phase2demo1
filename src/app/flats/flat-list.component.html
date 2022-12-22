@@ -1,0 +1,43 @@
+<div class="card">
+<div class="card-header">
+    Flat List
+</div>
+
+<div class="card-body">
+
+<div class="table-responsive">
+    <table class="table table-dark table-responsive">
+
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Area</th>
+              <th scope="col">NUmberof rooms</th>
+              <th scope="col"># balconies</th>
+              <th scope="col">Rent</th>
+              <th scope="col">Image</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let flat of flats;let i = index">
+              <td>{{i+1}}</td>
+                <td>
+                 {{flat.areaInSqFt}}
+                </td>
+                <td>{{flat.numberOfRooms}}</td>
+
+                <td>{{flat.numberOfBalconies}}</td>
+                <td>{{flat.monthlyRent}}</td>
+                <td><img src='{{flat.imageUrl}}'/></td>
+              </tr>
+          </tbody>
+        </table>
+
+</div>
+
+
+</div>
+
+
+</div>

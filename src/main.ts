@@ -7,6 +7,6 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-
+//naming convention ,which file will have the class AppModule app.module.ts
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
