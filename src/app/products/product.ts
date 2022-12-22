@@ -1,5 +1,5 @@
 export enum Category{
-    fruits, flowers ,vegetables,pulses,cereals
+    fruits='fruits', flowers='flowers' ,vegetables='vegetables',pulses='pulses',cereals='cereals'
 }
 export interface IProduct{
 
