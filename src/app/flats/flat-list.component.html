@@ -5,6 +5,10 @@
 
 <div class="card-body">
 
+  <input type="text"  #numR [(ngModel)]="numRooms"/>
+
+  <h1>Filtered as per number of rooms {{numRooms}}</h1>
+
 <div class="table-responsive">
     <table *ngIf="flats.length"   class="table table-dark ">
 
@@ -22,7 +26,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr  *ngFor="let flat of flats;let i = index">
+            <tr  *ngFor="let flat of filteredFlats;let i = index">
               <td>{{i+1}}</td>
                 <td>
                  {{flat.areaInSqFt}}

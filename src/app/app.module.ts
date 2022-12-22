@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PentHouseComponent } from './penthouse/penthouse.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FlatListComponent } from './flats/flat-list.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FlatListComponent } from './flats/flat-list.component';
   ],
   //imports mention the names of the modules on which my appmodule is dependent
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule
   ],

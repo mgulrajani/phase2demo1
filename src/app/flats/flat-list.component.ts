@@ -1,22 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IFlat } from './flat';
 @Component({
 
   selector:'flat-list',
   templateUrl:'./flat-list.component.html',
   styleUrls:['./flat-list.component.css']
 })
-export  class FlatListComponent{
+export  class FlatListComponent implements OnInit{
+
+
+  ngOnInit(): void {
+    this.filteredFlats = this.flats;
+  }
+   _numRooms:number=0;
   showImage:boolean=false;
   imageWidth:number=50;
   imageHeight:number=50;
   imageMargin:number=5;
+  filteredFlats:IFlat[]=[];
+
 
   annualRent=100000;
+
+  get numRooms():number{
+       return  this._numRooms;
+  }
+
+  set numRooms(val:number){
+
+    this._numRooms=val;
+    console.log('in setter ',val);
+    this.filteredFlats=this.filterData(val);
+    console.log('in setter',this.filteredFlats);
+  }
+
+
 
   person={name:'max',
 address:'pune'}
  //any data type array
-  flats:any[]=[
+  flats:IFlat[]=[
      {
 
     flatNumber:101,
@@ -55,4 +78,16 @@ imageVisibility():void{
 
   this.showImage= !this.showImage;
 }
+
+
+filterData(val:number):IFlat[]{
+  val=this.numRooms;
+  return this.flats.filter((flat:IFlat)=>flat.numberOfRooms==val);
+
+
+
+}
+
+
+
 }
