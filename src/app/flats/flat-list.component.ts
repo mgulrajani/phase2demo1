@@ -6,13 +6,18 @@ import { Component } from '@angular/core';
   styleUrls:['./flat-list.component.css']
 })
 export  class FlatListComponent{
+  showImage:boolean=false;
+  imageWidth:number=50;
+  imageHeight:number=50;
+  imageMargin:number=5;
 
   annualRent=100000;
 
   person={name:'max',
 address:'pune'}
  //any data type array
-  flats:any[]=[{
+  flats:any[]=[
+     {
 
     flatNumber:101,
     areaInSqFt:1000,
@@ -44,7 +49,10 @@ address:'pune'}
       imageUrl:'../../assets/images/flat302.jpg'
 
 
-  }]
+  } ]
 
+imageVisibility():void{
 
+  this.showImage= !this.showImage;
+}
 }
