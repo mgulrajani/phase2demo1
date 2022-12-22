@@ -7,6 +7,7 @@ import { PentHouseComponent } from './penthouse/penthouse.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FlatListComponent } from './flats/flat-list.component';
 import { FormsModule } from '@angular/forms';
+import { ProductsListComponent } from './products/products-list.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     PentHouseComponent,
     WelcomeComponent,
-    FlatListComponent
+    FlatListComponent,
+    ProductsListComponent
   ],
   //imports mention the names of the modules on which my appmodule is dependent
   imports: [
