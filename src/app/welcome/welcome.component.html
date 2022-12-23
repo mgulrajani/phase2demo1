@@ -1,4 +1,56 @@
+<div class="card">
+
 <p>welcome works!</p>
 {{welcomeMsg | transformData:' '}}
 
 {{welcomeMsg |slice:-1:-5 | repeat:5}}
+
+<input type="text" [(ngModel)]="num" />
+
+<div [ngSwitch]="num">
+
+    <div *ngSwitchCase="1">one</div>
+    <div *ngSwitchCase="3">three</div>
+    <div *ngSwitchCase="5">five</div>
+    <div *ngSwitchCase="7">seven</div>
+    <div *ngSwitchDefault>This is default value</div>
+
+
+
+</div>
+
+<h1>using ng-template with template reference variables</h1>
+<ng-container [ngSwitch]='num'>
+<ng-container *ngSwitchCase="1">
+    <ng-container *ngTemplateOutlet="template1And2"></ng-container>
+</ng-container>
+
+<ng-container *ngSwitchCase="2">
+    <ng-container *ngTemplateOutlet="template1And2"></ng-container>
+</ng-container>
+
+<ng-container *ngSwitchCase="3">
+    <ng-container *ngTemplateOutlet="template3And5"></ng-container>
+</ng-container>
+
+<ng-container *ngSwitchCase="5">
+    <ng-container *ngTemplateOutlet="template3And5"></ng-container>
+</ng-container>
+
+
+<ng-template #template1And2>the value is either 1 or 2 ,this is the template which will be displayed if val is 1 or 2
+
+</ng-template>
+
+<ng-template #template3And5>the
+     value is either 3 or 5 ,this is the
+      template which will be displayed if val is 3 or 5
+
+</ng-template>
+<ng-container *ngSwitchDefault>Default value</ng-container>
+</ng-container>
+
+
+
+</div>
+

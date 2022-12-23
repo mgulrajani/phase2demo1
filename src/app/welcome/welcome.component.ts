@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class WelcomeComponent {
   welcomeMsg:string="Welcome to Angular App";
+  num:number=0;
+  data:number=3;
   constructor() { }
 
 }
