@@ -14,6 +14,8 @@ import { C1Component } from './c1/c1.component';
 import { AComponent } from './a/a.component';
 import { BComponent } from './b/b.component';
 import { CartComponent } from './cart/cart.component';
+import { TransformDataPipe } from './transform-data.pipe';
+import { RepeatPipe } from './repeat.pipe';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { CartComponent } from './cart/cart.component';
     C1Component,
     AComponent,
     BComponent,
-    CartComponent
+    CartComponent,
+    TransformDataPipe,
+    RepeatPipe
 
   ],
   //imports mention the names of the modules on which my appmodule is dependent

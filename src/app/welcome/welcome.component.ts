@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
-
+  welcomeMsg:string="Welcome to Angular App";
   constructor() { }
 
 }

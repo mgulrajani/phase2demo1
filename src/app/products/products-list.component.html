@@ -21,6 +21,7 @@
                   <th scope="col">Rating</th>
 
                   <th scope="col">Image</th>
+                  <th scope="col">Qty</th>
 
                 </tr>
               </thead>
@@ -45,6 +46,8 @@
                       height="50px"
                       width="50px"
                       /></td>
+
+                      <td><input type="number" style="width: 50px;" [(ngModel)]="prod.qty"></td>
                   </tr>
               </tbody>
             </table>

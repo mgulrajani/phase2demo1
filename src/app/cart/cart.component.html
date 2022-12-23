@@ -14,7 +14,7 @@
                  <th scope="col">Name</th>
                   <th scope="col">Category</th>
                   <th scope="col">Price</th>
-
+                  <th scope="col">Qty</th>
                 </tr>
               </thead>
               <tbody>
@@ -27,7 +27,7 @@
 
                     <td>{{prod.price|currency:'INR'}}</td>
                      <!--<td>{{prod.rating}}</td>-->
-
+                     <td><input type="number" [(ngModel)]="prod.qty"></td>
                          </tr>
               </tbody>
             </table>

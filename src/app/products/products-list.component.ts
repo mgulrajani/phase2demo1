@@ -24,6 +24,7 @@ filteredProducts:IProduct[]=[];
     price:180,
     image:'../../assets/images/apple.jpg',
     rating:3.5,
+    qty:0
 
    },
   {
@@ -35,6 +36,7 @@ filteredProducts:IProduct[]=[];
     price:340,
     image:'../../assets/images/tomato.jpg',
     rating:2,
+    qty:0
 }];
 
 
