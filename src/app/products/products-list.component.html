@@ -27,7 +27,7 @@
               <tbody>
                 <tr  *ngFor="let prod of filteredProducts;let i = index">
                   <td>{{i+1}}</td>
-                    <td>
+                    <td (click)="onSelect(prod)">
                      {{prod.name|uppercase}}
                     </td>
                     <td>{{prod.category}}</td>

@@ -10,7 +10,7 @@
 <body>
 <app-a></app-a>
 <app-c>
-  
+
 </app-c>
 <h1>{{pageTitle}}</h1>
 <h2>{{name}}</h2>
@@ -23,6 +23,8 @@
 
 <flat-list></flat-list>
  -->
- <products-list></products-list>
+ <products-list (OnProductSelection)="onProductSelection($event)"></products-list>
+
+<app-cart [products]="products"></app-cart>
 </body>
 </html>

@@ -13,6 +13,7 @@ import { ProductEditComponent } from './products/product-edit.component';
 import { C1Component } from './c1/c1.component';
 import { AComponent } from './a/a.component';
 import { BComponent } from './b/b.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { BComponent } from './b/b.component';
     ProductEditComponent,
     C1Component,
     AComponent,
-    BComponent
+    BComponent,
+    CartComponent
 
   ],
   //imports mention the names of the modules on which my appmodule is dependent

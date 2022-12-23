@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Category, IProduct } from './product';
 
 @Component({
@@ -9,6 +9,7 @@ import { Category, IProduct } from './product';
 export class ProductsListComponent implements OnInit {
   pageTitle:string="Product List "
 filteredProducts:IProduct[]=[];
+@Output() OnProductSelection:EventEmitter<IProduct>=new EventEmitter<IProduct>();
 
   ngOnInit(): void {
     this.filteredProducts = this.products;
@@ -50,7 +51,9 @@ filteredProducts:IProduct[]=[];
     this.pageTitle='My Angular App ' +msg;
   }
 
-
+ onSelect(p:IProduct){
+  this.OnProductSelection.emit(p);
+ }
 
 
 }
