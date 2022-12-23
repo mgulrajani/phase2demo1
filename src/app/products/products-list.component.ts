@@ -7,6 +7,7 @@ import { Category, IProduct } from './product';
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent implements OnInit {
+  pageTitle:string="Product List "
 filteredProducts:IProduct[]=[];
 
   ngOnInit(): void {
@@ -45,6 +46,9 @@ filteredProducts:IProduct[]=[];
   }
 
 
+  onRatingClicked(msg:string):void{
+    this.pageTitle='My Angular App ' +msg;
+  }
 
 
 

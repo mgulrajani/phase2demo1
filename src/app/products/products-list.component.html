@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        Product List
+        {{pageTitle}}
     </div>
 
     <div class="card-body">
@@ -35,7 +35,10 @@
                     <td>{{prod.price|currency:'INR'}}</td>
                      <!--<td>{{prod.rating}}</td>-->
 
-                     <td><app-star [rating]='prod.rating' [title]="prod.rating"></app-star></td>
+                     <td><app-star
+                      [rating]='prod.rating'
+                       [title]="prod.rating"
+                       (ratingClicked)="onRatingClicked($event)"></app-star></td>
                      <td><img
                       [src]='prod.image'
                       [title]="prod.name"
