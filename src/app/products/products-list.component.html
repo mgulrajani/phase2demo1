@@ -5,9 +5,9 @@
 
     <div class="card-body">
 
-      <input type="text" (keyup)="filterData(filterValue)"  [(ngModel)]="filterValue"/>
+      <input type="text" (keypress)="filterData(filterValue)"  [(ngModel)]="filterValue"/>
 
-      <h1>Filtered as per number of rooms {{filterValue}</h1>
+      <h1>Filtered as per  {{filterValue}}</h1>
 
     <div class="table-responsive">
         <table *ngIf="products.length"   class="table  ">
@@ -18,6 +18,8 @@
                   <th scope="col">Name</th>
                   <th scope="col">Category</th>
                   <th scope="col">Price</th>
+                  <th scope="col">Rating</th>
+
                   <th scope="col">Image</th>
 
                 </tr>
@@ -26,11 +28,14 @@
                 <tr  *ngFor="let prod of filteredProducts;let i = index">
                   <td>{{i+1}}</td>
                     <td>
-                     {{prod.name}}
+                     {{prod.name|uppercase}}
                     </td>
                     <td>{{prod.category}}</td>
 
-                    <td>{{prod.price}}</td>
+                    <td>{{prod.price|currency:'INR'}}</td>
+                     <!--<td>{{prod.rating}}</td>-->
+
+                     <td><app-star [rating]='prod.rating' [title]="prod.rating"></app-star></td>
                      <td><img
                       [src]='prod.image'
                       [title]="prod.name"

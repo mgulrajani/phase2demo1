@@ -8,8 +8,6 @@ export interface IProduct{
     category:Category;
     price:number;
     image:string;
-
+    rating:number;
 
 }
-
-

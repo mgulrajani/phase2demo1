@@ -20,7 +20,8 @@ filteredProducts:IProduct[]=[];
     category:Category.fruits,
 
     price:180,
-    image:'../../assets/images/apple.jpg'
+    image:'../../assets/images/apple.jpg',
+    rating:3.5,
 
    },
   {
@@ -30,8 +31,8 @@ filteredProducts:IProduct[]=[];
     category:Category.vegetables,
 
     price:340,
-    image:'../../assets/images/tomato.jpg'
-
+    image:'../../assets/images/tomato.jpg',
+    rating:2,
 }];
 
 
