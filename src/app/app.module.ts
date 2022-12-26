@@ -16,6 +16,8 @@ import { BComponent } from './b/b.component';
 import { CartComponent } from './cart/cart.component';
 import { TransformDataPipe } from './transform-data.pipe';
 import { RepeatPipe } from './repeat.pipe';
+import { ProductService } from 'shared/product.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { RepeatPipe } from './repeat.pipe';
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

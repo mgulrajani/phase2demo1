@@ -9,7 +9,7 @@ styleUrls:['./app.component.css']
 })
 //this is a class( part 1)
 export class AppComponent{
-
+   cssStyle:string[]=['redborder','size30'];
    //variable pageTitle of type string with initial value
     pageTitle:string=
     'My Angular App';

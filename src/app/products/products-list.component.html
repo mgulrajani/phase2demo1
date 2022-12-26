@@ -10,7 +10,7 @@
       <h1>Filtered as per  {{filterValue}}</h1>
 
     <div class="table-responsive">
-        <table *ngIf="products.length"   class="table  ">
+        <table *ngIf="products.length;else elseBlock"   class="table  ">
 
             <thead>
                 <tr>
@@ -51,6 +51,7 @@
                   </tr>
               </tbody>
             </table>
+            <ng-template #elseBlock><h1>No products</h1></ng-template>
 
     </div>
 

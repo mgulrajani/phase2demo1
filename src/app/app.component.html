@@ -14,7 +14,10 @@
 </app-c>
 <h1>{{pageTitle}}</h1>
 <h2>{{name}}</h2>
-<h1>hello world</h1>
+<div class="row">
+<div [ngClass]="cssStyle">this is div</div>
+  <h1 [ngStyle]="{'font-size':'40px','color':'purple'}">hello world</h1></div>
+
 <app-welcome></app-welcome>
 
 <!--
@@ -23,8 +26,9 @@
 <app-welcome class="flex-item"></app-welcome>
 </div>
 
-<flat-list></flat-list>
- -->
+<flat-list></flat-list>-->
+
+
  <products-list (OnProductSelection)="onProductSelection($event)"></products-list>
 
 <app-cart [products]="products"></app-cart>
