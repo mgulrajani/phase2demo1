@@ -1,0 +1,176 @@
+[
+  {
+      "id": 1,
+       "name": "Angular Connect",
+      "date": "3/24/2023",
+      "time": "10:00 am",
+      "price": "599.99",
+      "imageUrl": "/assets/images/angularconnect-shield.png",
+      "location": {
+        "address": "1057  DT Street , ML Auditorium",
+        "city": "Hamburg",
+        "country": "Germany"
+      },
+      "sessions": [
+        {
+          "id": 1,
+          "name": "Using Angular 4 Pipes",
+          "presenter": "Peter Bacon Darwin",
+          "duration": 1,
+          "level": "Intermediate",
+          "abstract": "Learn angular pipes",
+          "voters": ["bradgreen", "igorminar", "martinfowler"]
+        },
+        {
+          "id": 2,
+          "name": "Getting the most out of your dev team",
+          "presenter": "Jeff Cross",
+          "duration": 1,
+          "level": "Intermediate",
+          "abstract": "some abstract notes",
+               "voters": ["johnpapa", "bradgreen", "igorminar", "martinfowler"]
+        },
+        {
+          "id": 3,
+          "name": "Angular 4 Performance Metrics",
+          "presenter": "Rob Wormald",
+          "duration": 2,
+          "level": "Advanced",
+          "abstract": "some note",
+          "voters": []}
+
+]},
+
+{
+  "id": 2,
+   "name": "Angular Upgrades",
+  "date": "3/24/2023",
+  "time": "08:30 pm",
+  "price": "1000.99",
+  "imageUrl": "/assets/images/angularconnect-shield.png",
+  "location": {
+    "address": "1057  DT Street , ML Auditorium",
+    "city": "Mumbai",
+    "country": "India"
+  },
+  "sessions": [
+    {
+      "id": 1,
+      "name": "Using Angular 4 Pipes",
+      "presenter": "Peter  Darwin",
+      "duration": 1,
+      "level": "Intermediate",
+      "abstract": "Learn angular pipes",
+      "voters": ["bradgreen", "igorminar", "martinfowler"]
+    },
+    {
+      "id": 2,
+      "name": "Getting the most out of your dev team",
+      "presenter": "Jeff Cross",
+      "duration": 1,
+      "level": "Intermediate",
+      "abstract": "some abstract notes",
+           "voters": ["johnpapa", "bradgreen", "igorminar", "martinfowler"]
+    },
+    {
+      "id": 3,
+      "name": " Performance Metrics",
+      "presenter": "Rob Wormald",
+      "duration": 2,
+      "level": "Advanced",
+      "abstract": "some note",
+      "voters": []}
+
+]}
+,
+
+
+
+{
+  "id": 3,
+   "name": "Philosophy Behind Dependency Injection",
+  "date": "4/24/2023",
+  "time": "10:00 am",
+  "price": "599.99",
+  "imageUrl": "/assets/images/angularconnect-shield.png",
+  "location": {
+    "address": "1057  DT Street , ML Auditorium",
+    "city": "Hamburg",
+    "country": "Germany"
+  },
+  "sessions": [
+    {
+      "id": 1,
+      "name": "Using Angular 4 Pipes",
+      "presenter": "Peter Bacon Darwin",
+      "duration": 1,
+      "level": "Intermediate",
+      "abstract": "Learn angular pipes",
+      "voters": ["bradgreen", "igorminar", "martinfowler"]
+    },
+    {
+      "id": 2,
+      "name": "Getting the most out of your dev team",
+      "presenter": "Jeff Cross",
+      "duration": 1,
+      "level": "Intermediate",
+      "abstract": "some abstract notes",
+           "voters": ["johnpapa", "bradgreen", "igorminar", "martinfowler"]
+    },
+    {
+      "id": 3,
+      "name": "Angular 4 Performance Metrics",
+      "presenter": "Rob Wormald",
+      "duration": 2,
+      "level": "Advanced",
+      "abstract": "some note",
+      "voters": []}
+
+]},
+
+{
+"id": 2,
+"name": "Angular Routing",
+"date": "3/24/2023",
+"time": "08:30 pm",
+"price": "1000.99",
+"imageUrl": "/assets/images/angularconnect-shield.png",
+"location": {
+"address": "1057  DT Street , ML Auditorium",
+"city": "Mumbai",
+"country": "India"
+},
+"sessions": [
+{
+  "id": 1,
+  "name": "Using Angular 4 Pipes",
+  "presenter": "Peter  Darwin",
+  "duration": 1,
+  "level": "Intermediate",
+  "abstract": "Learn angular pipes",
+  "voters": ["bradgreen", "igorminar", "martinfowler"]
+},
+{
+  "id": 2,
+  "name": "Getting the most out of your dev team",
+  "presenter": "Jeff Cross",
+  "duration": 1,
+  "level": "Intermediate",
+  "abstract": "some abstract notes",
+       "voters": ["johnpapa", "bradgreen", "igorminar", "martinfowler"]
+},
+{
+  "id": 3,
+  "name": " Performance Metrics",
+  "presenter": "Rob Wormald",
+  "duration": 2,
+  "level": "Advanced",
+  "abstract": "some note",
+  "voters": []}
+
+]}
+
+
+]
+
+ 

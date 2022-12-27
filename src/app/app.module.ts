@@ -18,6 +18,11 @@ import { TransformDataPipe } from './transform-data.pipe';
 import { RepeatPipe } from './repeat.pipe';
 import { ProductService } from 'shared/product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NavBarComponent } from './navbar/navbar.component';
+import { EventsListComponent } from './events/events-list.component';
+import { EventDetailComponent } from './events/event-detail.component';
+import { httpClientInMemBackendServiceFactory, HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryEventDbService } from 'src/app/inmeoryeventdbservice';
 
 
 @NgModule({
@@ -38,7 +43,11 @@ import { HttpClientModule } from '@angular/common/http';
     BComponent,
     CartComponent,
     TransformDataPipe,
-    RepeatPipe
+    RepeatPipe,
+    NavBarComponent,
+    EventsListComponent,
+    EventDetailComponent
+
 
   ],
   //imports mention the names of the modules on which my appmodule is dependent
@@ -46,8 +55,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-
-    HttpClientModule
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService)
   ],
   providers: [],
   bootstrap: [AppComponent]

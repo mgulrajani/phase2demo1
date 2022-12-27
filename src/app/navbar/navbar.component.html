@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    .active {
+  background-color:orange;
+  color:white;
+}
+
+body{
+  background-color: gray;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <h1> <a class="navbar-brand">{{pageTitle}}</a></h1>
+        <ul class="navbar-nav mr-auto">
+          <button mat-icon-button> <li class="nav-item"
+               >
+
+                <a class="nav-link"
+                   >All Events</a>
+            </li></button>&nbsp;&nbsp;
+            <button mat-button ><li class="nav-item"
+                >
+                <a class="nav-link active">Create Event</a>
+            </li></button>&nbsp;&nbsp;
+            <button mat-button><li class="nav-item"
+               >
+                <a class="nav-link"
+                   >About Us</a>
+            </li></button>&nbsp;&nbsp;
+            <button mat-button><li class="nav-item"
+                >
+                <a class="nav-link"
+                   >Contact Us</a>
+            </li></button>&nbsp;&nbsp;
+        </ul>
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item"
+                *ngIf="isLoggedIn">
+                <a class="nav-link"
+                   >Welcome {{ userName }}</a>
+            </li>
+              <li class="nav-item"
+                *ngIf="!isLoggedIn">
+                <a class="nav-link"
+                   >Log In</a>
+            </li>
+            <li class="nav-item"
+                *ngIf="isLoggedIn">
+                <a class="nav-link"
+                   (click)="logOut()"
+                   style="cursor: pointer">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+</body>
+</html>
