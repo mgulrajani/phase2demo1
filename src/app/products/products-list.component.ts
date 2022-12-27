@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { ProductService } from 'shared/product.service';
 import { Category, IProduct } from './product';
@@ -21,7 +22,7 @@ dataReceived=this.productService.getProducts();
 
 @Output() OnProductSelection:EventEmitter<IProduct>=new EventEmitter<IProduct>();
 
-  constructor(private productService:ProductService,){ }
+  constructor(private productService:ProductService,private router:Router){ }
 
 
   ngOnInit(): void {
@@ -39,7 +40,10 @@ dataReceived=this.productService.getProducts();
        }
        );
 
-       this.productService.selectedProductChanges$.subscribe(currentProduct=>this.selectedProduct=currentProduct);
+       this.productService.selectedProductChanges$.
+       subscribe(currentProduct=>{this.selectedProduct=currentProduct;
+       console.log(this.selectedProduct);
+       });
 
 
      }
@@ -68,7 +72,12 @@ dataReceived=this.productService.getProducts();
  }
 
 newProduct():void{
+  console.log('in new product');
+
   this.productService.changeSelectedProduct(this.productService.newProduct());
+  console.log('back to newProduct from service ');
+  
+   this.router.navigate(['/addProduct']);
 }
  productSelected(product:IProduct):void{
   this.productService.changeSelectedProduct(product);
