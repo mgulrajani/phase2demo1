@@ -4,10 +4,14 @@ import { AppComponent } from './app.component';
 import { EventDetailComponent } from './events/event-detail.component';
 import { ProductAddComponent } from './products/product-add.component';
 
+//created  a Routes array
+//Routes
+//[ { path , component},
+//{  path , component , } ]
 const routes: Routes = [
   {path:'events/:id',component:EventDetailComponent},
-{path:'addProduct',component:ProductAddComponent},
-{path:'',pathMatch:'full' ,component:AppComponent}]
+  {path:'addProduct',component:ProductAddComponent},
+  {path:'',pathMatch:'full' ,component:AppComponent}]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

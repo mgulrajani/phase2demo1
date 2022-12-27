@@ -22,7 +22,8 @@ dataReceived=this.productService.getProducts();
 
 @Output() OnProductSelection:EventEmitter<IProduct>=new EventEmitter<IProduct>();
 
-  constructor(private productService:ProductService,private router:Router){ }
+  constructor(private productService:ProductService,
+    private router:Router){ }
 
 
   ngOnInit(): void {
@@ -76,7 +77,7 @@ newProduct():void{
 
   this.productService.changeSelectedProduct(this.productService.newProduct());
   console.log('back to newProduct from service ');
-  
+
    this.router.navigate(['/addProduct']);
 }
  productSelected(product:IProduct):void{
