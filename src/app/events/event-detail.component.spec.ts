@@ -4,6 +4,7 @@ import { EventDetailComponent } from "./event-detail.component";
 
 describe('EventDetailComponent', () => {
     let component: EventDetailComponent;
+    //declaration of element of the type HTMLElement
     let element:HTMLElement;
     let fixture: ComponentFixture<EventDetailComponent>;
 
@@ -15,6 +16,7 @@ describe('EventDetailComponent', () => {
 
       fixture = TestBed.createComponent(EventDetailComponent);
       component = fixture.componentInstance;
+      //assignment
       element=fixture.nativeElement;
       fixture.detectChanges();
     });

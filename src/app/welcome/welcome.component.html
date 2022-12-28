@@ -1,6 +1,6 @@
 <div class="card">
 
-<h2>{{welcomeMsg}}/h2>
+<h2 appEmoji>hello</h2>
 {{welcomeMsg |slice:-1:-5 | repeat:5}}
 
 <input type="text" [(ngModel)]="num" />
@@ -17,7 +17,7 @@
 
 </div>
 <h1 id="msg">{{data}}</h1>
-<h1>using ng-template with template reference variables</h1>
+<h1 appEmoji>using ng-template with template reference variables</h1>
 <ng-container [ngSwitch]='num'>
 <ng-container *ngSwitchCase="1">
     <ng-container *ngTemplateOutlet="template1And2"></ng-container>
@@ -50,5 +50,5 @@
 
 
 
-</div>
 
+</div>
