@@ -22,8 +22,8 @@ export class StarComponent implements OnInit ,OnChanges{
   ngOnInit(): void {
   }
   onClick():void{
-
-    this.ratingClicked.emit(`The rating ${this.rating} is clicked`);
+   let msg =  document.querySelector('#h1')?.textContent ?? 'hello';
+    this.ratingClicked.emit(msg);
   }
 
 

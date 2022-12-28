@@ -14,4 +14,8 @@
     <div *ngIf="event?.onlineUrl">
       Online URL: {{event?.onlineUrl}}
     </div>
+
+    <div id="data">{{event|json}}</div>
+
+    <div id="messageDisplay">{{ message }}</div>
   </div>

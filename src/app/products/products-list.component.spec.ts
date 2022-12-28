@@ -7,6 +7,8 @@ describe('ProductsListComponent', () => {
   let fixture: ComponentFixture<ProductsListComponent>;
 
   beforeEach(async () => {
+    //first building block of angular testing module
+    //TestBed
     await TestBed.configureTestingModule({
       declarations: [ ProductsListComponent ]
     })
@@ -20,4 +22,7 @@ describe('ProductsListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  
+
 });

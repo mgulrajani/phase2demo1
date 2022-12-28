@@ -3,7 +3,7 @@
     <hr/>
     <div class="row">
       <div *ngFor="let event of events" class="col-md-5">
-        <event-detail (click)="eventSelected(event)" [event]="event"></event-detail>
+        <event-detail [message]="message" (click)="eventSelected(event)" [event]="event"></event-detail>
       </div>
     </div>
   </div>

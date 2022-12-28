@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
+import { IEvent } from './events';
 
 @Component({
   selector: 'event-detail',
@@ -8,9 +9,11 @@ import { ActivatedRoute } from '@angular/router'
 
 export class EventDetailComponent {
 id:number=0;
-  constructor(private activatedRoute:ActivatedRoute){}
+  constructor(){}
 
-  @Input() event:any
+  @Input() event:any;
+  @Input() message:string='';
+
 
   getStartTimeStyle():any {
     if (this.event && this.event.time === '8:00 am')

@@ -14,7 +14,7 @@ export class EventsListComponent implements OnInit,OnDestroy {
   events:IEvent[]=[];
   sub!:Subscription;
   selectedEvent!:IEvent | null;
-
+  message:string='';
   constructor(private eventService: EventService,private router:Router){}
   ngOnDestroy(): void {
    this.sub.unsubscribe();}
