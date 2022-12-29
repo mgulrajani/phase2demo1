@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 export class country{
   id:string='';
   name:string='';
@@ -8,6 +9,13 @@ export class country{
     this.name=name;
   }
 }
+export class Emp{
+  id!:number;
+  firstname!:string;
+  lastname!:string;
+  country!:string;
+
+}
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -15,15 +23,26 @@ export class country{
 })
 
 export class EmployeeComponent implements OnInit {
-
+@ViewChild('empForm',{})empForm!:NgForm;
   countries:country[]=[
     new country("1","India"),
     new country("2","Japan")
   ];
   constructor() { }
-
+    emp!:Emp
   ngOnInit(): void {
+    this.emp={
+      id:1,
+      firstname:'sachin',
+      lastname:'mishra',
+      country:'India'
+
+    };
+    setTimeout(()=>{
+      this.empForm.setValue(this.emp);
+    })
   }
+
 
   onSubmit(empForm:any){
    console.log(empForm.value)
@@ -32,5 +51,24 @@ export class EmployeeComponent implements OnInit {
   reset(empForm:any) {
     empForm.resetForm();
   }
-
+ changeCountry(){
+  this.empForm.controls['country'].setValue("1");
+ }
 }
+
+
+/*
+
+
+to set the initial values in template driven form
+
+a) create object of the interface
+b) in  ngOnInit(){
+
+  setTimeOut()    form.setValue(value)
+}
+
+if any value is remaining -- method to access it thru form.controls['username'].setValue( )
+*/
+
+

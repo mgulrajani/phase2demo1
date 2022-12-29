@@ -38,7 +38,7 @@
 
 <p>
     <label for="country">Country</label>
-    <select #country name="country" id="country" required>
+    <select (click)="changeCountry()" #country="ngModel" name="country" id="country" required ngModel>
         <option [ngValue]="c.id" *ngFor="let c of countries">{{c.name}}</option>
     </select>
 
