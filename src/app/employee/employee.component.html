@@ -1,8 +1,8 @@
 <form  autocomplete="false" #empForm="ngForm" (ngSubmit)="onSubmit(empForm)">
-
+<div class="form-group">
 <p>
     <label for="firstname">FirstName</label>
-    <input #firstname="ngModel" type="text" name="firstname"
+    <input class="form-control" #firstname="ngModel" type="text" name="firstname"
      id="firstname" required minlength="3" ngModel></p>
      <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)" class="error">
        <div *ngIf="firstname.errors?.['required']">
@@ -18,7 +18,8 @@
 
 <p>
     <label for="lastname">LastName</label>
-    <input #lastname="ngModel"
+    <input class="form-control"
+     #lastname="ngModel"
     required
     pattern="^[A-Za-z]+$"
     type="text" name="lastname" id="lastname" ngModel></p>
@@ -43,11 +44,31 @@
 
 </p>
 
+<p>
+    <label for="id">Id</label>
+    <input class="form-control" type="text" name="id" id="id" #id="ngModel"
+    required
+    getValidator
+    ngModel>
 
 
-<button type="submit" [disabled]="!empForm.valid">Submit</button>
+</p>
+<div *ngIf="!id?.valid && (id?.dirty || id?.touched)" class="error">
+    <div *ngIf="id.errors?.['required']">
+      Id is required
+ </div>
+ <div *ngIf="id.errors?.['gve']">
+     number should be greater than {{id.errors?.['requiredValue']}}
+    </div>
+
+</div>
 
 
+
+<button class="btn btn-primary" type="submit" [disabled]="!empForm.valid">Submit</button>
+<button class="btn btn-danger" type="button" (click)="reset(empForm)">Reset</button>
+
+</div>
 </form>
 
 <br>{{empForm.valid}}

@@ -28,4 +28,9 @@ export class EmployeeComponent implements OnInit {
   onSubmit(empForm:any){
    console.log(empForm.value)
   }
+
+  reset(empForm:any) {
+    empForm.resetForm();
+  }
+
 }
