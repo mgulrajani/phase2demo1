@@ -1,0 +1,54 @@
+<form  autocomplete="false" #empForm="ngForm" (ngSubmit)="onSubmit(empForm)">
+
+<p>
+    <label for="firstname">FirstName</label>
+    <input #firstname="ngModel" type="text" name="firstname"
+     id="firstname" required minlength="3" ngModel></p>
+     <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)" class="error">
+       <div *ngIf="firstname.errors?.['required']">
+         FirstName is required
+    </div>
+    <div *ngIf="firstname.errors?.['minlength']">
+        FirstName minimum number of chars  required is 3
+   </div>
+
+
+    </div>
+
+
+<p>
+    <label for="lastname">LastName</label>
+    <input #lastname="ngModel"
+    required
+    pattern="^[A-Za-z]+$"
+    type="text" name="lastname" id="lastname" ngModel></p>
+
+    <div *ngIf="!lastname?.valid && (firstname?.dirty || firstname?.touched)" class="error">
+        <div *ngIf="firstname.errors?.['required']">
+          Lastname is required
+     </div>
+     <div *ngIf="lastname.errors?.['pattern']">
+         Lastname should have alphabets
+        </div>
+
+</div>
+
+
+
+<p>
+    <label for="country">Country</label>
+    <select #country name="country" id="country" required>
+        <option [ngValue]="c.id" *ngFor="let c of countries">{{c.name}}</option>
+    </select>
+
+</p>
+
+
+
+<button type="submit" [disabled]="!empForm.valid">Submit</button>
+
+
+</form>
+
+<br>{{empForm.valid}}
+
