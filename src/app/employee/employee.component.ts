@@ -23,6 +23,8 @@ export class Emp{
 })
 
 export class EmployeeComponent implements OnInit {
+  //you have created #empForm - I want a reference here in my component
+  //@ViewChild
 @ViewChild('empForm',{})empForm!:NgForm;
   countries:country[]=[
     new country("1","India"),
@@ -72,3 +74,4 @@ if any value is remaining -- method to access it thru form.controls['username'].
 */
 
 
+//Book id ,title ,author { name ,email }, dateofpublishing--reactive form 
