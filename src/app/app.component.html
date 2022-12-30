@@ -28,12 +28,35 @@
 </div>
 
 <flat-list></flat-list>
--->
+
 
  <products-list (OnProductSelection)="onProductSelection($event)"></products-list>
 
 <app-cart [products]="products"></app-cart>
-<!--<event-list></event-list>-->
+<event-list></event-list>
+
+<router-outlet></router-outlet>
+</body>
+</html>
+
+<app-welcome></app-welcome>
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+-->
+
+<!--<app-employee></app-employee>
+<app-student-add></app-student-add>
+<app-employee-array></app-employee-array>-->
 
 <router-outlet></router-outlet>
 </body>
