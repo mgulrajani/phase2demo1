@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AppComponent } from './app.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeListComponent } from './employee/employee-list.component';
 import { EventDetailComponent } from './events/event-detail.component';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -58,6 +60,8 @@ path:'',component:HomeComponent,pathMatch:'full',
 {
 path:'student',component:StudentAddComponent
 },
+{path:'emps',component:EmployeeListComponent},
+{path:'emps/:id',component:EmployeeDetailComponent},
 {path:'**',component:PagenotfoundComponent}
 ]
 @NgModule({

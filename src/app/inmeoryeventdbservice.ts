@@ -207,7 +207,67 @@ implements InMemoryDbService{
         "rating":2,
         "qty":0
     }];
-      return  {events,products};
+
+
+    const trustees = [
+      {
+
+
+            "id": 1,
+            "prefix": "Mr.",
+            "firstName": "Charles",
+            "middleName": "Edwards",
+            "lastName": "Stewart",
+            "shortName": "Charles Stewart",
+            "ssn": "111222333",
+            "gender": "Male",
+            "countryOfResidence": "Australia",
+            "passport": "H1234567",
+            "countryOfIssuance": "Australia",
+            "issuanceDate": "15-04-2010",
+            "expirationDate": "15-04-2020",
+            "noOfDependents": 2,
+            "maritalStatus": "Married"
+          },
+          {
+            "id": 2,
+            "prefix": "Mrs.",
+            "firstName": "Diana",
+            "middleName": "Henryyy",
+            "lastName": "Stewart",
+            "shortName": "Diana Stewart",
+            "ssn": "444555666",
+            "gender": "Female",
+            "countryOfResidence": "Australia",
+            "passport": "M2231626",
+            "countryOfIssuance": "Australia",
+            "issuanceDate": "11-07-2012",
+            "expirationDate": "11-07-2022",
+            "noOfDependents": 1,
+            "maritalStatus": "Married"
+          },
+          {
+            "id": 3,
+            "prefix": "Mr.",
+            "firstName": "Phillip",
+            "middleName": "Matt",
+            "lastName": "Stewart",
+            "shortName": "Phil Stewart",
+            "ssn": "555666777",
+            "gender": "Male",
+            "maritalStatus": "Married",
+            "countryOfResidence": "Australia",
+            "passport": "H2345678",
+            "countryOfIssuance": "Australia",
+            "issuanceDate": "25-03-2010",
+            "expirationDate": "25-03-2020",
+            "noOfDependents": 3
+          }
+
+
+    ];
+
+      return  {events,products,trustees};
     }}
 
 

@@ -24,6 +24,23 @@ import { EventDetailComponent } from './events/event-detail.component';
 import { httpClientInMemBackendServiceFactory, HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryEventDbService } from 'src/app/inmeoryeventdbservice';
 import { ProductAddComponent } from './products/product-add.component';
+import { CreateTrusteeComponent } from './trustees/create-trustee.component';
+import { EditTrusteeComponent } from './trustees/edit-trustee.component';
+import { HeaderComponent } from './trustees/header.component';
+import { SidebarComponent } from './trustees/sidebar.component';
+import { TrusteeListComponent } from './trustees/trustee-list.component';
+import { ViewTrusteeComponent } from './trustees/view-trustee.component';
+import { EmojiDirective } from './emoji.directive';
+import { EmployeeComponent } from './employee/employee.component';
+import { GetValidatorDirective } from './employee/get-validator.directive';
+import { StudentAddComponent } from './student/student-add.component';
+import { EmployeeArrayComponent } from './employee/employee-array.component';
+import { HomeComponent } from './home/home.component';
+import { DashBoardComponent } from './dash-board/dash-board.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { EmployeeListComponent } from './employee/employee-list.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 
 
 @NgModule({
@@ -48,7 +65,24 @@ import { ProductAddComponent } from './products/product-add.component';
     NavBarComponent,
     EventsListComponent,
     EventDetailComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    CreateTrusteeComponent,
+    EditTrusteeComponent,
+    HeaderComponent,
+    SidebarComponent,
+    TrusteeListComponent,
+    ViewTrusteeComponent,
+    EmojiDirective,
+    EmployeeComponent,
+    GetValidatorDirective,
+    StudentAddComponent,
+    EmployeeArrayComponent,
+    HomeComponent,
+    DashBoardComponent,
+    AboutUsComponent,
+    PagenotfoundComponent,
+    EmployeeListComponent,
+    EmployeeDetailComponent
 
 
   ],
