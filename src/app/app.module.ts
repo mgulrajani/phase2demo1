@@ -41,6 +41,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { EmployeeListComponent } from './employee/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeLeaveComponent } from './employee/employee-leave.component';
+import { EmployeeSuggestionsComponent } from './employee/employee-suggestions.component';
 
 
 @NgModule({
@@ -82,7 +84,9 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
     AboutUsComponent,
     PagenotfoundComponent,
     EmployeeListComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    EmployeeLeaveComponent,
+    EmployeeSuggestionsComponent
 
 
   ],

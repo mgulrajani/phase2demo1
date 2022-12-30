@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AppComponent } from './app.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeLeaveComponent } from './employee/employee-leave.component';
 import { EmployeeListComponent } from './employee/employee-list.component';
+import { EmployeeSuggestionsComponent } from './employee/employee-suggestions.component';
 import { EventDetailComponent } from './events/event-detail.component';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
@@ -60,8 +62,13 @@ path:'',component:HomeComponent,pathMatch:'full',
 {
 path:'student',component:StudentAddComponent
 },
-{path:'emps',component:EmployeeListComponent},
-{path:'emps/:id',component:EmployeeDetailComponent},
+{path:'emps',component:EmployeeListComponent,
+children:[
+  {path:'detail/:id',component:EmployeeDetailComponent},
+  {path:'leaves',component:EmployeeLeaveComponent},
+  {path:'suggestions',component:EmployeeSuggestionsComponent}
+
+]},
 {path:'**',component:PagenotfoundComponent}
 ]
 @NgModule({

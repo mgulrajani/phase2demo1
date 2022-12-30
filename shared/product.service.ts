@@ -7,6 +7,7 @@ import { Category, IProduct } from "src/app/products/product";
     providedIn:'root'
 })
 export class ProductService{
+   foundIndex:number=0;
    //angular DI will resolve the dependency of ProductService class on HttpClient
     //A -- B --C
     //ProductListComponent it has a dependency mentioned in the constructors
@@ -186,7 +187,23 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
   //in that form , pre fill the data from the db with the selected product
   //user will modify
   //user will submit  ,this new product data will be used in http put with the id
+   getProductById(id:number):Observable<IProduct>{
+    return this.getProducts().pipe(
+      tap(()=>{console.log('fetch product'+id);
+       this.foundIndex =this.products.findIndex(item=>item.id ==id);
+      if(this.foundIndex > -1){
+        this.products[this.foundIndex];
+          }
+      }),
+      map(()=>this.products[this.foundIndex]),
+      catchError(this.errorHandler)
+      );
 
+
+
+
+
+   }
    updateProduct(product:IProduct):Observable<IProduct>{
     const headers= new HttpHeaders({'Content-Type':'application/json'});
 
