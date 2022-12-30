@@ -120,11 +120,26 @@
 
         </div>
       </div>
+
+</div>
+
+<div formArrayName="programs">
+
+  <div *ngFor="let program of programs().controls;let prgIndex=index">
+
+    <div [formGroupName]="prgIndex">
+      {{prgIndex}} <br>
+      Program Name:  <br>
+      <input type="text" name="prg" id="prg" formControlName="prg">
+      Duration:  <br>
+      <input type="text" name="duration" id="duration" formControlName="duration">
+      <button (click)="removeProgram(prgIndex)">Remove Program</button>
       </div>
 
-
-
-
+  </div>
+</div>
+<button (click)="addProgram()">Add Program</button>
+   
 <button type="submit" [disabled]="!studentForm.valid">Submit</button>
 </div>
 

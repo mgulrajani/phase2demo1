@@ -43,7 +43,8 @@ export class EmployeeArrayComponent implements OnInit {
     return this.employees().at(empIndex).get("skills") as FormArray;
   }
 
-
+//this is going to return a FormGroup
+//whenever we are clicking on the button to add a newskill
 newSkill():FormGroup{
   return this.fb.group({
     skill:'',
@@ -53,7 +54,6 @@ newSkill():FormGroup{
   addEmployeeSkill(empIndex:number){
     this.employeeSkills(empIndex).push(this.newSkill());
 
-
 }
 removeEmployeeSkill(empIndex:number,skillIndex:number){
   this.employeeSkills(empIndex).removeAt(skillIndex);
@@ -61,6 +61,6 @@ removeEmployeeSkill(empIndex:number,skillIndex:number){
 
 onSubmit(){
   console.log(this.empForm.value);
-  
+
 }
 }

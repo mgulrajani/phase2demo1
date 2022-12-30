@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatFormFieldControl } from '@angular/material';
 
 @Component({
@@ -22,10 +22,37 @@ export class StudentAddComponent implements OnInit {
 
           city:['Mumbai',[Validators.required]],
           state:['',[Validators.required]],
-          country:['',[Validators.required]]
-         })
+          country:['',[Validators.required]]}),
+          //adding programs as a  FormArray to add programs attended by student
+          programs:this.formBuilder.array([])
+
     })
   }
+  //a getter for getting programs , since its return value is FormArray and not an Array ,return type is given as FormArray
+    programs():FormArray{
+      return this.studentForm.get('programs') as FormArray;
+
+    }
+     //when new program is to be added , it is supposed to be a FormGroup of two formcontrols ie prg and duration
+
+    newProgram():FormGroup{
+     return this.formBuilder.group({
+
+      prg:'',
+      duration:''
+     })
+
+    }
+
+    //when button is clicked to addProgram
+    addProgram(){
+      this.programs().push(this.newProgram());
+    }
+
+    //removing a Program
+   removeProgram(programIndex:number){
+    this.programs().removeAt(programIndex);
+   }
 
     get id(){
       return this.studentForm.get("id");
