@@ -143,9 +143,12 @@ export class ProductAddComponent implements OnInit ,OnDestroy {
         //{...} it ensures that values are not lost ids are retained
         const product={...originalProduct,...this.addProduct.value};
 
-      if(product.id===0){
+      if(product.id==0){
         this.productService.createProduct(product).subscribe(
-          (resp)=>this.productService.changeSelectedProduct(resp),
+          (resp)=>{
+            this.productService.changeSelectedProduct(resp);
+            console.log(resp);},
+
           (err)=>this.errorMessage=err
         );
 
@@ -159,9 +162,9 @@ export class ProductAddComponent implements OnInit ,OnDestroy {
      }
       }
 
-
+      this.router.navigate(['products'])
     }
-    this.router.navigate(['products'])
+
   }
 //validating on blur ,if user tabs out through the form fields
   blur():void{
