@@ -43,6 +43,7 @@ import { EmployeeListComponent } from './employee/employee-list.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeLeaveComponent } from './employee/employee-leave.component';
 import { EmployeeSuggestionsComponent } from './employee/employee-suggestions.component';
+import { GreetComponent } from './greet/greet.component';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { EmployeeSuggestionsComponent } from './employee/employee-suggestions.co
     EmployeeListComponent,
     EmployeeDetailComponent,
     EmployeeLeaveComponent,
-    EmployeeSuggestionsComponent
+    EmployeeSuggestionsComponent,
+    GreetComponent
 
 
   ],

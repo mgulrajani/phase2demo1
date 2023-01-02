@@ -10,6 +10,7 @@ import { EventDetailComponent } from './events/event-detail.component';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProductAddComponent } from './products/product-add.component';
+import { ProductsListComponent } from './products/products-list.component';
 import { StudentAddComponent } from './student/student-add.component';
 import { CreateTrusteeComponent } from './trustees/create-trustee.component';
 import { EditTrusteeComponent } from './trustees/edit-trustee.component';
@@ -69,6 +70,8 @@ children:[
   {path:'suggestions',component:EmployeeSuggestionsComponent}
 
 ]},
+{path:'products',component:ProductsListComponent,
+children:[{path:'addProduct',component:ProductAddComponent},]},
 {path:'**',component:PagenotfoundComponent}
 ]
 @NgModule({

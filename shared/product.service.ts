@@ -103,7 +103,7 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
         name:'',
         category:Category.fruits,
         price:0,
-        image:'',
+        image:'\\assets\\images\\tomato.jpg',
         rating:0,
         qty:0
 
@@ -123,10 +123,11 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
   createProduct(product:IProduct):Observable<IProduct>{
      //headers variable to set request headers
     const headers= new HttpHeaders({'Content-Type':'application/json'});
-
+    const size = this.getProducts.length;
+    const id =size+1;
         //newProduct spread across product
-      const newProduct={...product,id:null};
-
+      const newProduct={...product,id:id};
+    console.log(`in create method ${id} ${this.url}`)
 
       //return logic starts here
       //http .post method

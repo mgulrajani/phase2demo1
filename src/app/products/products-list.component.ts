@@ -12,12 +12,13 @@ import { Category, IProduct } from './product';
 export class ProductsListComponent implements OnInit ,OnDestroy {
 errorMessage:string='';
 sub!:Subscription;
+prod!:IProduct;
 products:IProduct[]=[];
 pageTitle:string="Product List "
 filteredProducts:IProduct[]=[];
 selectedProduct!:IProduct | null;
 filterValue!:string;
-
+href:string='';
 dataReceived=this.productService.getProducts();
 
 @Output() OnProductSelection:EventEmitter<IProduct>=new EventEmitter<IProduct>();
@@ -27,6 +28,8 @@ dataReceived=this.productService.getProducts();
 
 
   ngOnInit(): void {
+    this.href=this.router.url;
+    console.log(this.href);
     //sub object is initialized
        this.sub =this.productService.getProducts().subscribe(
          (response)=>{
@@ -78,12 +81,15 @@ newProduct():void{
   this.productService.changeSelectedProduct(this.productService.newProduct());
   console.log('back to newProduct from service ');
 
-   this.router.navigate(['/addProduct']);
+   this.router.navigate([this.href,'addProduct']);
 }
  productSelected(product:IProduct):void{
   this.productService.changeSelectedProduct(product);
  }
-
+  getProductById(id:number):IProduct{
+    this.productService.getProductById(id).subscribe(resp=>this.prod=resp);
+    return this.prod;
+  }
 }
 
 

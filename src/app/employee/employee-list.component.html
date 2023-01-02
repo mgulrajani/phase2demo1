@@ -16,8 +16,8 @@
 
     </table>
 </div>
-
-<a routerLink='leaves'>Check your leaves</a>
-<a routerLink="suggestions">Drop your suggestions</a>
+<ul class="nav navbar-nav">
+<li><a [routerLink]="['leaves']">Check your leaves</a></li>
+<li><a routerLink="suggestions">Drop your suggestions</a></li></ul>
 
 <router-outlet></router-outlet>
