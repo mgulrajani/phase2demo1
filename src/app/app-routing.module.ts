@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AppComponent } from './app.component';
@@ -8,6 +8,7 @@ import { EmployeeListComponent } from './employee/employee-list.component';
 import { EmployeeSuggestionsComponent } from './employee/employee-suggestions.component';
 import { EventDetailComponent } from './events/event-detail.component';
 import { HomeComponent } from './home/home.component';
+import { ShellComponent } from './home/shell.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProductAddComponent } from './products/product-add.component';
 import { ProductsListComponent } from './products/products-list.component';
@@ -16,7 +17,9 @@ import { CreateTrusteeComponent } from './trustees/create-trustee.component';
 import { EditTrusteeComponent } from './trustees/edit-trustee.component';
 import { TrusteeListComponent } from './trustees/trustee-list.component';
 import { ViewTrusteeComponent } from './trustees/view-trustee.component';
-
+import { AuthGuard } from './user/auth-guard.service';
+import { LoginComponent } from './user/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 //created  a Routes array
 //Routes
 //[ { path , component},
@@ -48,7 +51,7 @@ import { ViewTrusteeComponent } from './trustees/view-trustee.component';
   {path:'',pathMatch:'full' ,component:AppComponent}]
 
 
-*/
+
 const routes:Routes=[
 
   {
@@ -71,9 +74,31 @@ children:[
 
 ]},
 {path:'products',component:ProductsListComponent,
-children:[{path:'addProduct',component:ProductAddComponent},]},
+
+children:[{path:'addProduct',component:ProductAddComponent}]},
+
 {path:'**',component:PagenotfoundComponent}
+]*/
+
+const routes:Routes=[
+  {path:'',component:ShellComponent,
+  children:[{path:'welcome',component:WelcomeComponent},
+
+{
+  path:'products',
+  component:ProductsListComponent,
+  canActivate:[AuthGuard],
+  children:[{path:'addProduct',component:ProductAddComponent}]
+},
+{path:'',redirectTo:'welcome',pathMatch:'full'},
+{path:'login',component:LoginComponent}
+
+]},
+{path:'**',component:PagenotfoundComponent}
+
+
 ]
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

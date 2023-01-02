@@ -9,7 +9,6 @@ import { FlatListComponent } from './flats/flat-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsListComponent } from './products/products-list.component';
 import { StarComponent } from './star/star.component';
-import { ProductEditComponent } from './products/product-edit.component';
 import { C1Component } from './c1/c1.component';
 import { AComponent } from './a/a.component';
 import { BComponent } from './b/b.component';
@@ -44,7 +43,9 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { EmployeeLeaveComponent } from './employee/employee-leave.component';
 import { EmployeeSuggestionsComponent } from './employee/employee-suggestions.component';
 import { GreetComponent } from './greet/greet.component';
-
+import { MenuComponent } from './home/menu.component';
+import { ShellComponent } from './home/shell.component';
+import { LoginComponent } from './user/login.component';
 
 @NgModule({
 
@@ -58,7 +59,7 @@ import { GreetComponent } from './greet/greet.component';
     FlatListComponent,
     ProductsListComponent,
     StarComponent,
-    ProductEditComponent,
+
     C1Component,
     AComponent,
     BComponent,
@@ -88,7 +89,12 @@ import { GreetComponent } from './greet/greet.component';
     EmployeeDetailComponent,
     EmployeeLeaveComponent,
     EmployeeSuggestionsComponent,
-    GreetComponent
+    GreetComponent,
+    MenuComponent,
+    ShellComponent,
+    LoginComponent,
+
+
 
 
   ],

@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 import { IProduct } from "./products/product";
 
 @Component({
@@ -16,7 +17,7 @@ export class AppComponent{
     products:IProduct[]=[];
 
 
-    name:string='OnlineRentals';
+    name:string='Products';
 
     onProductSelection(obj:IProduct){
         console.log(JSON.stringify(obj));
@@ -24,4 +25,8 @@ export class AppComponent{
 
     }
 
-}
+    
+    }
+
+
+
