@@ -28,10 +28,13 @@ return this.authservice.currentUser?.userName;
 return '';
 
 }
-constructor(private router:Router,private authservice:AuthService){}
+constructor(private router:Router,private authservice:AuthService){
+  console.log('menu constructor')
+}
 
 
   ngOnInit(): void {
+    console.log('menu on init')
   }
 
   logOut():void{
@@ -41,4 +44,35 @@ constructor(private router:Router,private authservice:AuthService){}
     this.authservice.logOut();
     this.router.navigate(['/welcome']);
   }
+
+  ngOnDestroy(): void {
+    console.log('menu destroyed');}
+
+
+    ngOnChanges():void{
+     console.log('menu component changes');
+    }
+
+    ngDoCheck(){
+      console.log('doCheck of menu');
+    }
+
+    ngAfterContentInit(){
+
+      console.log('menu content init');
+
+    }
+    ngAfterContentChecked(){
+      console.log('menu content checked');
+    }
+    ngAfterViewInit(){
+      console.log('menu view init');
+
+    }
+
+   ngAfterViewChecked(){
+    console.log('menu view checked');
+
+   }
+
 }
