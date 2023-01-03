@@ -36,9 +36,7 @@ import { ProductService } from "./product.service"
     }
   }*/
 describe('ProductService',()=>{
-  let httpController:HttpTestingController;
-
-  let service:ProductService;
+    let service:ProductService;
 
   beforeEach(()=>{
      TestBed.configureTestingModule({
@@ -77,7 +75,7 @@ describe('ProductService',()=>{
           "qty":0
       }];
 
-      let response=null;
+      let response:IProduct[]=[];
       spyOn(service, 'getProducts').and.returnValue(of(items));
 
       service.getProducts().subscribe(res=>response=res);
