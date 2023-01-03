@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { GreetingComponent } from '../greeting/greeting.component';
 import { AuthService } from '../user/auth.service';
 
 @Component({
@@ -8,7 +9,12 @@ import { AuthService } from '../user/auth.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-pageTitle:string='Online Shopping';
+  @ViewChild(GreetingComponent)greetingc!:GreetingComponent;
+  //how to access ref1 template reference variable in component
+
+  @ViewChild('ref1',{read:TemplateRef})ref1!: TemplateRef<any>;
+
+pageTitle:string='Online Shopping ';
 
 get isLoggedIn():boolean{
   //service to return the loggedInstatus ofthe user
@@ -28,13 +34,15 @@ return this.authservice.currentUser?.userName;
 return '';
 
 }
-constructor(private router:Router,private authservice:AuthService){
+//we are telling angular that we want to render ref1 which is our template ref var on view
+constructor(private router:Router,private authservice:AuthService,private viewref:ViewContainerRef){
   console.log('menu constructor')
 }
 
 
   ngOnInit(): void {
-    console.log('menu on init')
+    console.log('menu on init');
+
   }
 
   logOut():void{
@@ -51,6 +59,7 @@ constructor(private router:Router,private authservice:AuthService){
 
     ngOnChanges():void{
      console.log('menu component changes');
+
     }
 
     ngDoCheck(){
@@ -67,12 +76,18 @@ constructor(private router:Router,private authservice:AuthService){
     }
     ngAfterViewInit(){
       console.log('menu view init');
+      this.viewref.createEmbeddedView(this.ref1);
 
     }
 
    ngAfterViewChecked(){
     console.log('menu view checked');
 
+
+   }
+   greet():void{
+    console.log(this.greetingc.displayMessage());
+    this.pageTitle=this.greetingc.displayMessage();
    }
 
 }

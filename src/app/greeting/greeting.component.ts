@@ -40,4 +40,7 @@ export class GreetingComponent implements OnInit {
 
    }
 
+    displayMessage():string{
+      return this.messageText;
+    }
   }
