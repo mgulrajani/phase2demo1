@@ -66,7 +66,7 @@ describe('EventDetailComponent', () => {
       fixture.detectChanges();
       let val = element.querySelector("#data")?.textContent;
 
-      expect(val).toEqual(event1);
+      expect(JSON.stringify(val)).toEqual(JSON.stringify(JSON.parse(event1)));
 
 
 

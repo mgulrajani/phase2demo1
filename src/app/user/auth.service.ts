@@ -22,17 +22,23 @@ export class AuthService{
     login(userName:string,password:string):void{
 
      //service which connect to back end api to validate the user
-     
+
 
      this.currentUser={
         id:2,
         userName,
-        isAdmin:true
+        isAdmin:false
      };
 
     }
 
     logOut():void{
         this.currentUser=null;
+    }
+    isAdmin():boolean{
+        if(this.currentUser)
+        return this.currentUser?.isAdmin;
+
+        return false;
     }
 }
