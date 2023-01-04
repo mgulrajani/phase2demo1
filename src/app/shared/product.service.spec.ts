@@ -94,17 +94,32 @@ describe('ProductService',()=>{
 
       httpMock.verify();
     }
-  ))
+  ));
 
-      /*let response:IProduct[]=[];
+  //using spyOn
+  it('should get product by id',()=>{
+      let response:IProduct;
 
 
-      spyOn(service, 'getProducts').and.returnValue(of(items));
+     let item ={
 
-      service.getProducts().subscribe(res=>response=res);
-     expect(response).toEqual(items);
-     expect(service.getProducts).toHaveBeenCalled();
+      "id":111,
+      "name":"apples",
+      "category":Category.fruits,
 
-*/
+      "price":180,
+      "image":"../../assets/images/apple.jpg",
+      "rating":3.5,
+      "qty":0
+
+     };
+
+      const fn=spyOn(service, 'getProductById').and.returnValue(of(item));
+
+      service.getProductById(111).subscribe(res=>{response=res;expect(response).toEqual(item);});
+
+     expect(fn).toHaveBeenCalled();
+
+  });
     })
 
