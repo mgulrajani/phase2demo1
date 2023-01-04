@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductsListComponent } from './products-list.component';
@@ -10,7 +11,8 @@ describe('ProductsListComponent', () => {
     //first building block of angular testing module
     //TestBed
     await TestBed.configureTestingModule({
-      declarations: [ ProductsListComponent ]
+      declarations: [ ProductsListComponent ],
+      imports:[HttpClientModule]
     })
     .compileComponents();
 
@@ -23,6 +25,6 @@ describe('ProductsListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  
+
 
 });

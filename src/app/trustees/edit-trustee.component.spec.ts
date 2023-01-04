@@ -1,6 +1,7 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { EditTrusteeComponent } from './edit-trustee.component';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";import { EditTrusteeComponent } from './edit-trustee.component';
 
 describe('EditTrusteeComponent', () => {
   let component: EditTrusteeComponent;
@@ -8,7 +9,8 @@ describe('EditTrusteeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditTrusteeComponent ]
+      declarations: [ EditTrusteeComponent ],
+      imports:[HttpClientModule,RouterTestingModule]
     })
     .compileComponents();
 

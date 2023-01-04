@@ -18,26 +18,5 @@ msg:string='hello there'
    console.log('shell component changes');
   }
 
-  ngDoCheck(){
-    console.log('doCheck of Shell');
-  }
-
-  ngAfterContentInit(){
-
-    console.log('Shell content init');
-
-  }
-  ngAfterContentChecked(){
-    console.log('shell content checked');
-  }
-  ngAfterViewInit(){
-    console.log('shell view init');
-
-  }
-
- ngAfterViewChecked(){
-  console.log('shell view checked');
-
- }
 
 }

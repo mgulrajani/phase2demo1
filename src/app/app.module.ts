@@ -47,6 +47,8 @@ import { MenuComponent } from './home/menu.component';
 import { ShellComponent } from './home/shell.component';
 import { LoginComponent } from './user/login.component';
 import { GreetingComponent } from './greeting/greeting.component';
+import { CardListComponent } from './cards/cardlist.component';
+import { CardComponent } from './cards/card.component';
 
 @NgModule({
 
@@ -95,7 +97,8 @@ import { GreetingComponent } from './greeting/greeting.component';
     ShellComponent,
     LoginComponent,
     GreetingComponent,
-
+    CardListComponent,
+   CardComponent
 
 
 
@@ -109,7 +112,7 @@ import { GreetingComponent } from './greeting/greeting.component';
     ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService)
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })

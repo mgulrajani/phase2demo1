@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {HttpTestingController , HttpClientTestingModule } from '@angular/common/http/testing'
 import { TrusteeListComponent } from './trustee-list.component';
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe('TrusteeListComponent', () => {
   let component: TrusteeListComponent;
@@ -8,7 +9,9 @@ describe('TrusteeListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrusteeListComponent ]
+      declarations: [ TrusteeListComponent ],
+      imports:[HttpClientTestingModule,RouterTestingModule]
+
     })
     .compileComponents();
 

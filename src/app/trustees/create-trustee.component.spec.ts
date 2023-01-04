@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from "@angular/router/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
 import { CreateTrusteeComponent } from './create-trustee.component';
 
 describe('CreateTrusteeComponent', () => {
@@ -8,7 +10,8 @@ describe('CreateTrusteeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateTrusteeComponent ]
+      declarations: [ CreateTrusteeComponent ],
+      imports:[ReactiveFormsModule,HttpClientTestingModule,RouterTestingModule]
     })
     .compileComponents();
 

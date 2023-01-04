@@ -11,7 +11,7 @@ describe('StudentAddComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ StudentAddComponent ],
-      imports:[FormBuilder,FormsModule,ReactiveFormsModule]
+      imports:[FormsModule,ReactiveFormsModule]
     })
     .compileComponents();
 
