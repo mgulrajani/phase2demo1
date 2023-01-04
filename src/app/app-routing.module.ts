@@ -2,6 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AppComponent } from './app.component';
+import { CustomersModule } from './customers/customers.module';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
 import { EmployeeLeaveComponent } from './employee/employee-leave.component';
 import { EmployeeListComponent } from './employee/employee-list.component';
@@ -83,6 +84,9 @@ children:[{path:'addProduct',component:ProductAddComponent}]},
 const routes:Routes=[
   {path:'',component:ShellComponent,
   children:[{path:'welcome',component:WelcomeComponent},
+{path:'customers',
+loadChildren: () => import('../app/customers/customers.module').then(m => m.CustomersModule)
+},
 
 {
   path:'products',

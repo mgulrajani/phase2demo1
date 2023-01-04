@@ -49,6 +49,7 @@ import { LoginComponent } from './user/login.component';
 import { GreetingComponent } from './greeting/greeting.component';
 import { CardListComponent } from './cards/cardlist.component';
 import { CardComponent } from './cards/card.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
 
@@ -110,6 +111,7 @@ import { CardComponent } from './cards/card.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({}),
     HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService)
   ],
 

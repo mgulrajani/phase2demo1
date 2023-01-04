@@ -6,6 +6,7 @@ import { ProductAddComponent } from './product-add.component';
 
 describe('ProductAddComponent', () => {
   let component: ProductAddComponent;
+  let element:HTMLElement;
   let fixture: ComponentFixture<ProductAddComponent>;
 
   beforeEach(async () => {
@@ -17,10 +18,13 @@ describe('ProductAddComponent', () => {
 
     fixture = TestBed.createComponent(ProductAddComponent);
     component = fixture.componentInstance;
+    element=fixture.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it()
 });
