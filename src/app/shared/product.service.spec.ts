@@ -1,6 +1,6 @@
 import { HttpEvent, HttpEventType } from "@angular/common/http";
 import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
-import { inject, TestBed } from "@angular/core/testing";
+import { getTestBed, inject, TestBed } from "@angular/core/testing";
 
 import { of } from "rxjs";
 import { Category, IProduct } from "src/app/products/product";
@@ -40,6 +40,11 @@ import { ProductService } from "./product.service"
 describe('ProductService',()=>{
     let service:ProductService;
 
+    let injector: TestBed;
+
+  let httpMock: HttpTestingController;
+
+let  items:any[]=[];
   beforeEach(()=>{
      TestBed.configureTestingModule({
       imports:[HttpClientTestingModule],
@@ -47,16 +52,11 @@ describe('ProductService',()=>{
      });
      service=TestBed.get(ProductService);
 
-  });
-  it('should be created',()=>{
-    expect(service).toBeTruthy();
-  })
-  it('should getAllProducts',
-    inject([HttpTestingController,ProductService],
-      (httpMock:HttpTestingController,service:ProductService)=>{
 
+     injector = getTestBed();
 
-    const items=[
+    httpMock = injector.get(HttpTestingController);
+      items=[
 
       {
 
@@ -83,6 +83,17 @@ describe('ProductService',()=>{
       }];
 
 
+
+  });
+  it('should be created',()=>{
+    expect(service).toBeTruthy();
+  })
+  it('should getAllProducts',
+    inject([HttpTestingController,ProductService],
+      (httpMock:HttpTestingController,service:ProductService)=>{
+
+
+
       service.getProducts().subscribe(resp=>expect(items).toEqual(resp));
 
 
@@ -96,7 +107,7 @@ describe('ProductService',()=>{
     }
   ));
 
-  //using spyOn
+  //using spyOn to test getProductById
   it('should get product by id',()=>{
       let response:IProduct;
 
@@ -121,5 +132,48 @@ describe('ProductService',()=>{
      expect(fn).toHaveBeenCalled();
 
   });
-    })
+
+   it('createProduct() should post a product and    return array of products as data',()=>{
+
+
+    let item ={
+
+      "id":113,
+      "name":"mangoes",
+      "category":Category.fruits,
+
+      "price":300,
+      "image":"../../assets/images/mangoes.jpg",
+      "rating":4.5,
+      "qty":0
+
+     };
+
+
+    let item2 ={
+
+      "id":114,
+      "name":"mangoes",
+      "category":Category.fruits,
+
+      "price":300,
+      "image":"../../assets/images/mangoes.jpg",
+      "rating":3.5,
+      "qty":0
+
+     };
+    items =[...items,item];
+     service.createProduct(item).subscribe(resp=>expect(resp).toEqual(item2) )
+     expect(items.length).toEqual(3);
+
+     const req = httpMock.expectOne(service.url);
+     expect(req.request.method).toBe('POST');
+     req.flush({item });
+
+     })
+
+   });
+
+
+
 
