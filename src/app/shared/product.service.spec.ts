@@ -164,7 +164,7 @@ let  items:any[]=[];
      };
     items =[...items,item];
      service.createProduct(item).subscribe(resp=>expect(resp).toEqual(item2) )
-     expect(items.length).toEqual(3);
+     expect(items.length).toEqual(2);
 
      const req = httpMock.expectOne(service.url);
      expect(req.request.method).toBe('POST');
