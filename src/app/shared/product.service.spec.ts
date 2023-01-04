@@ -45,6 +45,9 @@ describe('ProductService',()=>{
   let httpMock: HttpTestingController;
 
 let  items:any[]=[];
+afterEach(() => {
+  httpMock.verify();
+});
   beforeEach(()=>{
      TestBed.configureTestingModule({
       imports:[HttpClientTestingModule],
@@ -103,7 +106,7 @@ let  items:any[]=[];
       expect(mockReq.request.responseType).toEqual('json');
       mockReq.flush(items);
 
-      httpMock.verify();
+
     }
   ));
 
@@ -132,8 +135,10 @@ let  items:any[]=[];
      expect(fn).toHaveBeenCalled();
 
   });
+ //failed the test , tried to POST item1 and expected it to be equal to item2
+ //then change it back to item and  see the test passed
 
-   it('createProduct() should post a product and    return array of products as data',()=>{
+   it('createProduct() should post a product and    return that new product  as data',()=>{
 
 
     let item ={
@@ -170,7 +175,42 @@ let  items:any[]=[];
      expect(req.request.method).toBe('POST');
      req.flush({item });
 
-     })
+     });
+
+     it('updateProduct () should update  a product and    return updated product as data',()=>{
+
+
+
+
+
+      let item2 ={
+
+        "id":112,
+        "name":"Ratnagiri mangoes",
+        "category":Category.fruits,
+
+        "price":300,
+        "image":"../../assets/images/mangoes.jpg",
+        "rating":4.5,
+        "qty":0
+
+       };
+
+       service.updateProduct(item2).subscribe(resp=>expect(resp).toEqual(item2) )
+
+
+       const req = httpMock.expectOne(`${service.url}/${item2.id}`);
+       expect(req.request.method).toBe('PUT');
+       req.flush({item2 });
+
+       })
+
+
+
+
+
+
+
 
    });
 
