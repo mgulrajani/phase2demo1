@@ -15,7 +15,7 @@ import { BComponent } from './b/b.component';
 import { CartComponent } from './cart/cart.component';
 import { TransformDataPipe } from './transform-data.pipe';
 import { RepeatPipe } from './repeat.pipe';
-import { ProductService } from 'shared/product.service';
+import { ProductService } from 'src/app/shared/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './navbar/navbar.component';
 import { EventsListComponent } from './events/events-list.component';

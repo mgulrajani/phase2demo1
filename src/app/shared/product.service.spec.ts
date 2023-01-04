@@ -1,4 +1,6 @@
-import { TestBed } from "@angular/core/testing";
+import { HttpEvent, HttpEventType } from "@angular/common/http";
+import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
+import { inject, TestBed } from "@angular/core/testing";
 
 import { of } from "rxjs";
 import { Category, IProduct } from "src/app/products/product";
@@ -40,6 +42,7 @@ describe('ProductService',()=>{
 
   beforeEach(()=>{
      TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
         providers:[ProductService],
      });
      service=TestBed.get(ProductService);
@@ -48,7 +51,11 @@ describe('ProductService',()=>{
   it('should be created',()=>{
     expect(service).toBeTruthy();
   })
-  it('should getAllProducts',()=>{
+  it('should getAllProducts',
+    inject([HttpTestingController,ProductService],
+      (httpMock:HttpTestingController,service:ProductService)=>{
+
+
     const items=[
 
       {
@@ -75,14 +82,29 @@ describe('ProductService',()=>{
           "qty":0
       }];
 
-      let response:IProduct[]=[];
+
+      service.getProducts().subscribe(resp=>expect(items).toEqual(resp));
+
+
+      const mockReq = httpMock.expectOne(service.url);
+
+      expect(mockReq.cancelled).toBeFalsy();
+      expect(mockReq.request.responseType).toEqual('json');
+      mockReq.flush(items);
+
+      httpMock.verify();
+    }
+  ))
+
+      /*let response:IProduct[]=[];
+
+
       spyOn(service, 'getProducts').and.returnValue(of(items));
 
       service.getProducts().subscribe(res=>response=res);
      expect(response).toEqual(items);
      expect(service.getProducts).toHaveBeenCalled();
 
-
+*/
     })
 
-})

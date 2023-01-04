@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { InMemoryDbService, RequestInfo } from "angular-in-memory-web-api";
 import { Observable } from "rxjs";
 import { IEvent } from "src/app/events/events";
-import { EventService } from "../../shared/event.service";
+import { EventService } from "./shared/event.service";
 import { IProduct ,Category} from "./products/product";
 @Injectable({providedIn:'root'})
 export class InMemoryEventDbService
