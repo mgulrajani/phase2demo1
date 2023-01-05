@@ -51,6 +51,8 @@ import { CardListComponent } from './cards/cardlist.component';
 import { CardComponent } from './cards/card.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './app.effects';
 
 @NgModule({
 
@@ -114,6 +116,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HttpClientModule,
     ReactiveFormsModule,
     StoreModule.forRoot({}),
+    //have to create AppEffects
+    EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument(),
     HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService)
   ],

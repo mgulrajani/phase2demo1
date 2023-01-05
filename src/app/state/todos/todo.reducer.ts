@@ -1,7 +1,7 @@
 
 import {addTodo,removeTodo,loadTodos,LoadTodoSuccess,LoadTodoFailure} from './todo.actions';
 import { Todo } from 'app/todo/todo.model';
-import { createReducer, on } from '@ngrx/store/src';
+import { createReducer, on } from '@ngrx/store';
 
 
 export  interface TodoState{
