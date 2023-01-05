@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router  } from '@angular/router';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import {DatePipe} from '@angular/common';
-import { TrusteeService } from 'src/app/shared/trustee.service';
+import { TrusteeService } from '../shared/trustee.service';
 import { Trustee } from './trustee';
 import { ValidateDropDownDefault } from './validators/dropdown.default.validator';
 

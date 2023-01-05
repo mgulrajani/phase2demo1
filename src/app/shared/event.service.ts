@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, tap, catchError, BehaviorSubject } from "rxjs";
-import { IEvent } from "src/app/events/events";
+import { IEvent } from "../events/events";
 
 @Injectable({
     providedIn:'root'
 })
 export class EventService{
   //this is pointing to events array object in memory api
-  
+
   private url="api/events/";
   private events:IEvent[]=[];
   private selectedEventSource = new BehaviorSubject<IEvent | null >(null);

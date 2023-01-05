@@ -15,13 +15,13 @@ import { BComponent } from './b/b.component';
 import { CartComponent } from './cart/cart.component';
 import { TransformDataPipe } from './transform-data.pipe';
 import { RepeatPipe } from './repeat.pipe';
-import { ProductService } from 'src/app/shared/product.service';
+import { ProductService } from '../app/shared/product.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './navbar/navbar.component';
 import { EventsListComponent } from './events/events-list.component';
 import { EventDetailComponent } from './events/event-detail.component';
 import { httpClientInMemBackendServiceFactory, HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryEventDbService } from 'src/app/inmeoryeventdbservice';
+import { InMemoryEventDbService } from '../app/inmeoryeventdbservice';
 import { ProductAddComponent } from './products/product-add.component';
 import { CreateTrusteeComponent } from './trustees/create-trustee.component';
 import { EditTrusteeComponent } from './trustees/edit-trustee.component';
@@ -50,6 +50,7 @@ import { GreetingComponent } from './greeting/greeting.component';
 import { CardListComponent } from './cards/cardlist.component';
 import { CardComponent } from './cards/card.component';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
 
@@ -99,7 +100,8 @@ import { StoreModule } from '@ngrx/store';
     LoginComponent,
     GreetingComponent,
     CardListComponent,
-   CardComponent
+   CardComponent,
+
 
 
 
@@ -112,6 +114,7 @@ import { StoreModule } from '@ngrx/store';
     HttpClientModule,
     ReactiveFormsModule,
     StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument(),
     HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService)
   ],
 

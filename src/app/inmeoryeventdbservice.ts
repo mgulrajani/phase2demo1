@@ -1,14 +1,29 @@
 import { Injectable } from "@angular/core";
 import { InMemoryDbService, RequestInfo } from "angular-in-memory-web-api";
 import { Observable } from "rxjs";
-import { IEvent } from "src/app/events/events";
+import { IEvent } from "../app/events/events";
 import { EventService } from "./shared/event.service";
 import { IProduct ,Category} from "./products/product";
+import { Customer } from "./customers/customer/customer.model";
 @Injectable({providedIn:'root'})
 export class InMemoryEventDbService
 implements InMemoryDbService{
 
     createDb(){
+      const customers:Customer[]=[ {
+        "name": "Amit Sharma ",
+        "phone": "910928392098",
+        "address": "123 MG Street",
+        "membership": "Platinum",
+        "id": 1
+      },
+      {
+        "name": "Hetal Shah",
+        "phone": "808937482734",
+        "address": "893 Main Street",
+        "membership": "Pro",
+        "id": 2
+      }];
      const events : IEvent[] = [
         {
             "id": 1,
@@ -267,7 +282,7 @@ implements InMemoryDbService{
 
     ];
 
-      return  {events,products,trustees};
+      return  {events,products,trustees,customers};
     }}
 
 

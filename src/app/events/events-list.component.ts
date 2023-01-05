@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { EventService } from 'src/app/shared/event.service';
+import { EventService } from '../shared/event.service'
 import { IEvent } from './events'
 
 

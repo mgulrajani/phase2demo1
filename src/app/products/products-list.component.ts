@@ -20,7 +20,7 @@ selectedProduct!:IProduct | null;
 filterValue!:string;
 href:string='';
 dataReceived=this.productService.getProducts();
-
+obsProducts$!:Observable<IProduct[]>;
 @Output() OnProductSelection:EventEmitter<IProduct>=new EventEmitter<IProduct>();
 
   constructor(private productService:ProductService,
@@ -31,7 +31,8 @@ dataReceived=this.productService.getProducts();
     this.href=this.router.url;
     console.log(this.href);
     //sub object is initialized
-       this.sub =this.productService.getProducts().subscribe(
+       this.obsProducts$=this.productService.getProducts();
+       /*.subscribe(
          (response)=>{
 
          console.log(response);
@@ -42,7 +43,7 @@ dataReceived=this.productService.getProducts();
        err=>{this.errorMessage=err;
         console.log(err);
        }
-       );
+       );*/
 
        this.productService.selectedProductChanges$.
        subscribe(currentProduct=>{this.selectedProduct=currentProduct;

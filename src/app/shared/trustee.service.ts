@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { Trustee } from 'src/app/trustees/trustee';
+import { Trustee } from '../trustees/trustee';
 import { Observable } from 'rxjs';
 
 const httpOptions = {

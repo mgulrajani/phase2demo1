@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TrusteeService } from 'src/app/shared/trustee.service';
+import { TrusteeService } from '../shared/trustee.service';
 import { Trustee } from './trustee';
 import { ValidateDropDownDefault } from './validators/dropdown.default.validator';
 
