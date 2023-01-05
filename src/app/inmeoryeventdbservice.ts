@@ -5,11 +5,13 @@ import { IEvent } from "../app/events/events";
 import { EventService } from "./shared/event.service";
 import { IProduct ,Category} from "./products/product";
 import { Customer } from "./customers/customer/customer.model";
+import { Todo } from "./todo/todo.model";
 @Injectable({providedIn:'root'})
 export class InMemoryEventDbService
 implements InMemoryDbService{
 
     createDb(){
+      const todos: Todo[]=[{id:'111',content:'hello'},{id:'222',content:'angular web db'}];
       const customers:Customer[]=[ {
         "name": "Amit Sharma ",
         "phone": "910928392098",
@@ -282,7 +284,7 @@ implements InMemoryDbService{
 
     ];
 
-      return  {events,products,trustees,customers};
+      return  {events,products,trustees,customers,todos};
     }}
 
 
