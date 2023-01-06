@@ -56,10 +56,10 @@ obsProducts$!:Observable<IProduct[]>;
     //    }
     //    );*/
 
-    //    this.productService.selectedProductChanges$.
-    //    subscribe(currentProduct=>{this.selectedProduct=currentProduct;
-    //    console.log(this.selectedProduct);
-    //    });
+      //  console.log(this.selectedProduct);
+      //  this.productService.selectedProductChanges$.
+      //  subscribe(currentProduct=>{this.selectedProduct=currentProduct;
+      // });
    // Do NOT subscribe here because it uses an async pipe
     // This gets the initial values until the load is complete.
     this.products$ = this.store.select(getProducts);
@@ -98,7 +98,7 @@ obsProducts$!:Observable<IProduct[]>;
  }
 
 newProduct():void{
-  // console.log('in new product');
+   console.log('in new product');
 
   // this.productService.changeSelectedProduct(this.productService.newProduct());
   // console.log('back to newProduct from service ');
