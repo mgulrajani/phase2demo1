@@ -54,7 +54,7 @@ export class ProductAddComponent implements OnInit ,OnDestroy {
 
    }
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+ //   this.sub.unsubscribe();
   }
 
 
@@ -165,7 +165,7 @@ console.log('value in form changes')
         //we arecopying data from teh addform
         //{...} it ensures that values are not lost ids are retained
         const product={...originalProduct,...this.addProduct.value};
-
+        console.log(product,'saveProduct of product add');
       if(product.id==0){
 
         this.store.dispatch(ProductActions.createProduct({product}));

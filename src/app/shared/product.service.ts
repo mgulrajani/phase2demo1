@@ -140,7 +140,8 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
 
          console.log('in create new product'+ JSON.stringify(data));
          //pushing the new data new Product to the products array
-         this.products.push(data);
+        // this.products.push(data);
+         console.log(JSON.stringify(this.products));
 
         },
         catchError(this.errorHandler)

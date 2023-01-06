@@ -26,5 +26,5 @@ describe('ProductAddComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it()
+  
 });
