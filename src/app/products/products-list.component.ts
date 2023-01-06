@@ -35,8 +35,7 @@ obsProducts$!:Observable<IProduct[]>;
 @Output() OnProductSelection:EventEmitter<IProduct>=new EventEmitter<IProduct>();
 
   constructor(private productService:ProductService,
-    private router:Router,private store:Store<State>,private location:Location){ }
-
+    private router:Router,private store:Store<State>){}
 
   ngOnInit(): void {
     this.href=this.router.url;

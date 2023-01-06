@@ -162,8 +162,8 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
         console.log('deleted prd'+id);
        const foundIndex = this.products.findIndex(item=>item.id===id);
        //if product id is not found means index returned will be -1
-       if(foundIndex > -1)
-       this.products.splice(foundIndex,1);
+       //if(foundIndex > -1)
+       //this.products.splice(foundIndex,1);
 
 
       },
@@ -193,9 +193,9 @@ changeSelectedProduct(selectedProduct:IProduct | null):void{
     return this.getProducts().pipe(
       tap(()=>{console.log('fetch product'+id);
        this.foundIndex =this.products.findIndex(item=>item.id ==id);
-      if(this.foundIndex > -1){
-        this.products[this.foundIndex];
-          }
+      //if(this.foundIndex > -1){
+       // this.products[this.foundIndex];
+        //  }
       }),
       map(()=>this.products[this.foundIndex]),
       catchError(this.errorHandler)
