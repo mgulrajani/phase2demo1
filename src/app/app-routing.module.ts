@@ -83,7 +83,7 @@ children:[{path:'addProduct',component:ProductAddComponent}]},
 
 const routes:Routes=[
   {path:'',component:ShellComponent,
-  children:[{path:'welcome',component:WelcomeComponent},
+  children:[{path:'welcome',component:WelcomeComponent}]},
 // {path:'customers',
 // loadChildren: () => import('../app/customers/customers.module').then(m => m.CustomersModule)
 // },
@@ -92,12 +92,12 @@ const routes:Routes=[
   path:'products',
   component:ProductsListComponent,
   canActivate:[AuthGuard],
-  children:[{path:'addProduct',component:ProductAddComponent}]
-},
+  loadChildren:()=>import('../app/product/product.module').then(m=>m.ProductModule)
+ },
 {path:'',redirectTo:'welcome',pathMatch:'full'},
 {path:'login',component:LoginComponent}
 
-]},
+,
 {
 path:'todo',
 loadChildren:()=>import('./todo/todo.module').then((m)=>m.TodoModule),

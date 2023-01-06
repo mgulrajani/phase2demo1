@@ -7,7 +7,7 @@ import { ProductService } from '../shared/product.service';
 import { Category, IProduct } from './product';
 
 @Component({
-  selector: 'app-product-add',
+  selector: 'product-add',
   templateUrl: './product-add.component.html',
   styleUrls: ['./product-add.component.css']
 })
@@ -54,7 +54,7 @@ export class ProductAddComponent implements OnInit ,OnDestroy {
 
 
   ngOnInit() {
-
+   console.log('in init of product add ,creating form')
     this.addProduct = this.formBuilder.group({
       id: [],
       name: ['',[ Validators.required,Validators.minLength(3),Validators.maxLength(10)]],

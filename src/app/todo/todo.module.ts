@@ -18,7 +18,7 @@ import { TodoEffects } from 'app/state/todos/todo.effects';
     CommonModule ,
     FormsModule,
     TodoPageRoutingModule,
-    StoreModule.forFeature('todo',todoReducer),
+    StoreModule.forFeature('todos',todoReducer),
     EffectsModule.forFeature(TodoEffects)
   ]
 })

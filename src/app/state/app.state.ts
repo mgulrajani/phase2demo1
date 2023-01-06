@@ -1,6 +1,6 @@
-import { TodoState } from "./todos/todo.reducer";
 
-export interface AppState
+///represemtation of entire app state
+//this needs to be extended by lazy loaded modules
+export interface State
 {
-  todos:TodoState;
 }

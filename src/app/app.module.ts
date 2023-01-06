@@ -7,8 +7,7 @@ import { PentHouseComponent } from './penthouse/penthouse.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { FlatListComponent } from './flats/flat-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ProductsListComponent } from './products/products-list.component';
-import { StarComponent } from './star/star.component';
+//import { StarComponent } from './star/star.component';
 import { C1Component } from './c1/c1.component';
 import { AComponent } from './a/a.component';
 import { BComponent } from './b/b.component';
@@ -22,7 +21,6 @@ import { EventsListComponent } from './events/events-list.component';
 import { EventDetailComponent } from './events/event-detail.component';
 import { httpClientInMemBackendServiceFactory, HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryEventDbService } from '../app/inmeoryeventdbservice';
-import { ProductAddComponent } from './products/product-add.component';
 import { CreateTrusteeComponent } from './trustees/create-trustee.component';
 import { EditTrusteeComponent } from './trustees/edit-trustee.component';
 import { HeaderComponent } from './trustees/header.component';
@@ -53,6 +51,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
+import { ProductShellComponent } from './products/product-shell.component';
 
 @NgModule({
 
@@ -64,8 +63,6 @@ import { AppEffects } from './app.effects';
     PentHouseComponent,
     WelcomeComponent,
     FlatListComponent,
-    ProductsListComponent,
-    StarComponent,
 
     C1Component,
     AComponent,
@@ -76,7 +73,7 @@ import { AppEffects } from './app.effects';
     NavBarComponent,
     EventsListComponent,
     EventDetailComponent,
-    ProductAddComponent,
+
     CreateTrusteeComponent,
     EditTrusteeComponent,
     HeaderComponent,
@@ -107,10 +104,12 @@ import { AppEffects } from './app.effects';
 
 
 
+
   ],
   //imports mention the names of the modules on which my appmodule is dependent
   imports: [
     FormsModule,
+    
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
