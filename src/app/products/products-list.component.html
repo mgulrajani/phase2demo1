@@ -1,3 +1,16 @@
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title-group>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Small</mat-card-subtitle>
+      <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+    </mat-card-title-group>
+  </mat-card-header>
+  <mat-card-content>
+    {{longText}}
+  </mat-card-content>
+</mat-card>
 <div class="card">
     <div class="card-header">
         {{pageTitle}}
@@ -49,6 +62,9 @@
                       height="50px"
                       width="50px"
                       alt="some product image"
+                      (mouseover)="applyAnimation($event)"
+                      (mouseout)="applyAnimation($event)"
+                      [@enlarge]="isHovering  ? 'end' : 'start'"
                       /></td>
                      <!-- <td><button class="btn btn-primary"
                       (click)="getProductById(prod.id)">Get Product</button>
@@ -67,7 +83,7 @@
     <div class="card-footer">
       <div class="col-md-4 text-right">
         <button class="btn btn-primary"
-        (click)="newProduct()">Add a Product</button>
+        (click)="newProduct()">Product Management</button>
 
       </div>
     </div>

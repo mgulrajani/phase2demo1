@@ -8,12 +8,38 @@ import { ProductService } from '../shared/product.service';
 import { Category, IProduct } from './product';
 import * as ProductActions from '../state/products/product.actions'
 import { Location } from '@angular/common';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 @Component({
   selector: 'products-list',
   templateUrl: './products-list.component.html',
-  styleUrls: ['./products-list.component.css']
+  styleUrls: ['./products-list.component.css'],
+  animations:[
+    trigger('enlarge',[
+
+      state('start',style({
+       width:'50px' , height:'50px' ,opacity:1
+      })),
+
+    state('end',style({
+      height:'300px',width:'300px' ,opacity:20
+    })),
+     transition('void=>start',animate('1s linear')),
+     transition('end=>void',animate('3s ease-in'))
+    //   animate('1s 3s')
+    // ]),
+    // transition('end=>start',[
+    //   animate('1s 3s')
+    // ]),
+    ]),
+    ]
 })
 export class ProductsListComponent implements OnInit ,OnDestroy {
+
+  //********************************For animation*********** */
+
+       isHovering:boolean= false;
+
+        //*********************** */
 errorMessage:string='';
 sub!:Subscription;
 prod!:IProduct;
@@ -111,6 +137,12 @@ this.store.dispatch(ProductActions.setCurrentProduct({currentProductId:product.i
   getProductById(id:number):IProduct{
     this.productService.getProductById(id).subscribe(resp=>this.prod=resp);
     return this.prod;
+  }
+
+  ///****************Animation of image */
+  applyAnimation($event: any){
+     this.isHovering=!this.isHovering;
+
   }
 }
 

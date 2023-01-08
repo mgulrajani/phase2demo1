@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PentHouseComponent } from './penthouse/penthouse.component';
@@ -109,7 +109,7 @@ import { ProductShellComponent } from './products/product-shell.component';
   //imports mention the names of the modules on which my appmodule is dependent
   imports: [
     FormsModule,
-    
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
