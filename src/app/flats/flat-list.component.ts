@@ -13,7 +13,7 @@ export  class FlatListComponent implements OnInit{
     this.filteredFlats = this.flats;
   }
    _numRooms:number=0;
-  showImage:boolean=false;
+  showImage:boolean=true;
   imageWidth:number=50;
   imageHeight:number=50;
   imageMargin:number=5;

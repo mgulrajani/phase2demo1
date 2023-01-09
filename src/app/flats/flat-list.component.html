@@ -3,14 +3,27 @@
     Flat List
 </div>
 
+
+<mat-card class="card1">
+<mat-card-header class="header">Flat  List</mat-card-header>
+</mat-card>
+<mat-card class="card1">
+  <mat-card-header>
+    <mat-card-title-group>
+   <mat-card-title class="header">Details </mat-card-title>
+
+    </mat-card-title-group>
+  </mat-card-header>
+</mat-card>
 <div class="card-body">
 
-  <input type="text"  #numR [(ngModel)]="numRooms"/>
+  <!-- <input type="text"  #numR [(ngModel)]="numRooms"/> -->
 
-  <h1>Filtered as per number of rooms {{numRooms}}</h1>
+  <!-- <h1>Filtered as per number of rooms {{numRooms}}</h1> -->
 
 <div class="table-responsive">
-    <table *ngIf="flats.length"   class="table table-dark ">
+  <div *ngIf="flats.length">
+    <!-- <table *ngIf="flats.length"   class="table table-dark ">
 
         <thead>
             <tr>
@@ -26,8 +39,22 @@
             </tr>
           </thead>
           <tbody>
-            <tr  *ngFor="let flat of filteredFlats;let i = index">
-              <td>{{i+1}}</td>
+            <tr  *ngFor="let flat of filteredFlats;let i = index"> -->
+              <div *ngFor="let flat of filteredFlats;let i=index;">
+              <mat-card class="card1">
+                <mat-card-header>
+                  <mat-card-title-group>
+                 <mat-card-title> Area : {{flat.areaInSqFt}} sq. ft</mat-card-title>
+                 <mat-card-subtitle>Number of Rooms :{{flat.numberOfRooms}}</mat-card-subtitle>
+                 <img *ngIf="showImage"
+                 [src]='flat.imageUrl'
+                 [title]="flat.numberOfRooms"
+                mat-card-sm-image
+                 />
+                  </mat-card-title-group>
+                </mat-card-header>
+              </mat-card>
+              <!-- <td>{{i+1}}</td>
                 <td>
                  {{flat.areaInSqFt}}
                 </td>
@@ -44,9 +71,9 @@
                   /></td>
               </tr>
           </tbody>
-        </table>
+        </table> -->
 
-</div>
+</div></div></div>
 
 
 </div>

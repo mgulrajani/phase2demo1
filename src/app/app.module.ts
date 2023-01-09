@@ -52,6 +52,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { ProductShellComponent } from './products/product-shell.component';
+import { MaterialModule } from './material-module/material-module.module';
 
 @NgModule({
 
@@ -107,7 +108,7 @@ import { ProductShellComponent } from './products/product-shell.component';
 
   ],
   //imports mention the names of the modules on which my appmodule is dependent
-  imports: [
+  imports: [MaterialModule,
     FormsModule,
     BrowserAnimationsModule,
     BrowserModule,

@@ -17,22 +17,22 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     trigger('enlarge',[
 
       state('start',style({
-       width:'50px' , height:'50px' ,opacity:1
+       width:'50px' , height:'50px'
       })),
 
     state('end',style({
-      height:'300px',width:'300px' ,opacity:20
+      height:'300px',width:'300px'
     })),
-     transition('void=>start',animate('1s linear')),
-     transition('end=>void',animate('3s ease-in'))
-    //   animate('1s 3s')
-    // ]),
-    // transition('end=>start',[
-    //   animate('1s 3s')
+     //transition('start=>end',animate('1s linear')),
+    transition('start=>end',[
+      animate('1s 3s')
+    ]),
+    transition('end=>start',[
+      animate('1s 3s')
     // ]),
     ]),
-    ]
-})
+    ])]})
+
 export class ProductsListComponent implements OnInit ,OnDestroy {
 
   //********************************For animation*********** */
