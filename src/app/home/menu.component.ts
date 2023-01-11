@@ -10,14 +10,14 @@ import { AuthService } from '../user/auth.service';
 })
 export class MenuComponent implements OnInit {
 
+isLoggedIn:boolean=false;
 pageTitle:string='Online Shopping ';
 constructor(private renderer:Renderer2 ,private router:Router,private authservice:AuthService,private viewref:ViewContainerRef){
   console.log('menu constructor')
+
+
 }
 
-get isLoggedIn():boolean{
-   return this.authservice.isLoggedIn();
-}
 
 
 get userName():string{
@@ -31,6 +31,10 @@ return '';
 
   ngOnInit(): void {
     console.log('menu on init');
+    this.isLoggedIn=this.authservice.isLoggedIn;
+     if(sessionStorage.getItem('isLogged')==='true'){
+      this.isLoggedIn=true;
+    } console.log(this.isLoggedIn, 'from init of menu ')
 
   }
 
@@ -38,6 +42,7 @@ return '';
 
     //this should also use the authserviceto logout the current user
     //you can route to some url
+
     this.authservice.logOut();
     this.router.navigate(['/welcome']);
   }
@@ -47,8 +52,11 @@ return '';
 
 
     ngOnChanges():void{
-     console.log('menu component changes');
 
+      console.log('menu component changes');
+      if(sessionStorage.getItem('isLogged')=='true'){
+        this.isLoggedIn=true;
+      }
     }
 
 }

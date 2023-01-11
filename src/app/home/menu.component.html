@@ -27,7 +27,7 @@
 *ngIf="isLoggedIn">
 <a class='nav-link' routerLink="/login">Welcome {{userName}}</a></li>
 
-    <li class="nav-item" *ngIf="!isLoggedIn">
+    <li class="nav-item" *ngIf='!isLoggedIn'>
         <a class="nav-link" routerLink="/login">Login</a>
         </li>
     <li class="nav-item" *ngIf="isLoggedIn">

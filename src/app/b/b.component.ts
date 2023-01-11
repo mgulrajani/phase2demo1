@@ -11,7 +11,7 @@ export class BComponent implements OnInit {
 
 @Output() nameChange:EventEmitter<string>=new EventEmitter<string>();
 
-
+direction='right'
   constructor() { }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class BComponent implements OnInit {
   onClick(){
 
   this.nameChange.emit(`the name has changed `);
-  
+
   }
 
 }

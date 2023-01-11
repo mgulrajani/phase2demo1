@@ -21,9 +21,10 @@ export class AuthGuard implements CanActivate{
         //create one admin user and use it
 
 
-    if(this.authService.isAdmin())
+    if(this.authService.isAdmin()){
+     console.log('Auth guard check for admin role')
     return true;
-
+    }
 
     this.authService.redirectToUrl=url;
     this.router.navigate(['/login']);

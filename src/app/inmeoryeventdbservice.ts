@@ -6,11 +6,26 @@ import { EventService } from "./shared/event.service";
 import { IProduct ,Category} from "./products/product";
 import { Customer } from "./customers/customer/customer.model";
 import { Todo } from "./todo/todo.model";
+import { User } from "./user/user";
 @Injectable({providedIn:'root'})
 export class InMemoryEventDbService
 implements InMemoryDbService{
 
     createDb(){
+      const users:User[]=[{ id:1,
+        userName:'rishi',
+        password:'rishi',
+        isAdmin:true},
+
+        { id:2,
+          userName:'kashish',
+          password:'kashish',
+          isAdmin:false},
+
+          { id:3,
+            userName:'dev',
+            password:'dev',
+            isAdmin:false}]
       const todos: Todo[]=[{id:'111',content:'hello'},{id:'222',content:'angular web db'}];
       const customers:Customer[]=[ {
         "name": "Amit Sharma ",
@@ -25,7 +40,105 @@ implements InMemoryDbService{
         "address": "893 Main Street",
         "membership": "Pro",
         "id": 2
-      }];
+      },
+      {
+        "name": "Amit Sharma ",
+        "phone": "910928392098",
+        "address": "123 MG Street",
+        "membership": "Platinum",
+        "id": 1
+      },
+      {
+        "name": "Hetal Shah",
+        "phone": "808937482734",
+        "address": "893 Main Street",
+        "membership": "Pro",
+        "id": 2
+      },
+      {
+        "name": "Amit Sharma ",
+        "phone": "910928392098",
+        "address": "123 MG Street",
+        "membership": "Platinum",
+        "id": 1
+      },
+      {
+        "name": "Hetal Shah",
+        "phone": "808937482734",
+        "address": "893 Main Street",
+        "membership": "Pro",
+        "id": 2
+      }
+    , {
+      "name": "Amit Sharma ",
+      "phone": "910928392098",
+      "address": "123 MG Street",
+      "membership": "Platinum",
+      "id": 1
+    },
+    {
+      "name": "Hetal Shah",
+      "phone": "808937482734",
+      "address": "893 Main Street",
+      "membership": "Pro",
+      "id": 2
+    },
+    {
+      "name": "Amit Sharma ",
+      "phone": "910928392098",
+      "address": "123 MG Street",
+      "membership": "Platinum",
+      "id": 1
+    },
+    {
+      "name": "Hetal Shah",
+      "phone": "808937482734",
+      "address": "893 Main Street",
+      "membership": "Pro",
+      "id": 2
+    },
+    {
+      "name": "Amit Sharma ",
+      "phone": "910928392098",
+      "address": "123 MG Street",
+      "membership": "Platinum",
+      "id": 1
+    },
+    {
+      "name": "Hetal Shah",
+      "phone": "808937482734",
+      "address": "893 Main Street",
+      "membership": "Pro",
+      "id": 2
+    },
+    {
+      "name": "Amit Sharma ",
+      "phone": "910928392098",
+      "address": "123 MG Street",
+      "membership": "Platinum",
+      "id": 1
+    },
+    {
+      "name": "Hetal Shah",
+      "phone": "808937482734",
+      "address": "893 Main Street",
+      "membership": "Pro",
+      "id": 2
+    },
+    {
+      "name": "Amit Sharma ",
+      "phone": "910928392098",
+      "address": "123 MG Street",
+      "membership": "Platinum",
+      "id": 1
+    },
+    {
+      "name": "Hetal Shah",
+      "phone": "808937482734",
+      "address": "893 Main Street",
+      "membership": "Pro",
+      "id": 2
+    }];
      const events : IEvent[] = [
         {
             "id": 1,
@@ -284,7 +397,7 @@ implements InMemoryDbService{
 
     ];
 
-      return  {events,products,trustees,customers,todos};
+      return  {events,products,trustees,customers,todos,users};
     }}
 
 

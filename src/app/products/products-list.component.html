@@ -42,18 +42,19 @@
                     <td>{{prod.price|currency:'INR'}}</td>
 
                      <td><app-star
+
                       [rating]='prod.rating'
                        [title]="prod.rating"
                        (ratingClicked)="onRatingClicked($event)"></app-star></td>
                      <td><img
+                      #img1
+                      class="hover1"
                       [src]='prod.image'
                       [title]="prod.name"
                       height="50px"
                       width="50px"
                       alt="some product image"
-                      (mouseover)="applyAnimation($event)"
-                      (mouseout)="applyAnimation($event)"
-                      [@enlarge]="isHovering  ? 'end' : 'start'"
+                        [@enlarge]="isHovering  ? 'end' : 'start'"
                       /></td>
                      <!-- <td><button class="btn btn-primary"
                       (click)="getProductById(prod.id)">Get Product</button>

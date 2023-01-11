@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { getProducts, getError, getCurrentProduct } from 'app/state/products/product.selectors';
@@ -8,7 +8,7 @@ import { ProductService } from '../shared/product.service';
 import { Category, IProduct } from './product';
 import * as ProductActions from '../state/products/product.actions'
 import { Location } from '@angular/common';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 @Component({
   selector: 'products-list',
   templateUrl: './products-list.component.html',
@@ -23,20 +23,27 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     state('end',style({
       height:'300px',width:'300px'
     })),
-     //transition('start=>end',animate('1s linear')),
-    transition('start=>end',[
-      animate('1s 3s')
-    ]),
-    transition('end=>start',[
-      animate('1s 3s')
-    // ]),
-    ]),
-    ])]})
 
+    // transition('start<=>end', animate('300ms ease-in',keyframes([
+    //   style({opacity: 0,transform: 'translateY(-75%)',offset:0}),
+    //   style({opacity: 1,transform: 'translateY(35px)',offset: .5}),
+    //   style({opacity: 1,transform: 'translateY(0)',offset:1}),
+    // ]))),
+
+     //transition('start=>end',animate('1s linear')),
+    // transition('start=>end',[
+    //   animate('1s 3s')
+    // ]),
+    // transition('end=>start',[
+    //   animate('1s 3s')
+    // // ]),
+    // ]),
+    // ])]})
+  ])]})
 export class ProductsListComponent implements OnInit ,OnDestroy {
 
   //********************************For animation*********** */
-
+       @ViewChild('img1')img1!:ElementRef;
        isHovering:boolean= false;
 
         //*********************** */
@@ -140,10 +147,20 @@ this.store.dispatch(ProductActions.setCurrentProduct({currentProductId:product.i
   }
 
   ///****************Animation of image */
-  applyAnimation($event: any){
-     this.isHovering=!this.isHovering;
+  applyAnimation1(i: any){
+  console.log('applyAnimation1')
+    if(this.img1.nativeElement?.className==='hover1'){
+      console.log('making to enlarge and animate')
+     this.isHovering=true;}
+
 
   }
+
+  applyAnimation2(i: any){
+    console.log('applyAnimation2')
+    if(this.img1.nativeElement?.className==='hover1')
+    {this.isHovering=false;
+    }
 }
 
-
+}

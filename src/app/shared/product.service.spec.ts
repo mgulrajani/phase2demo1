@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from "@angular/common/
 import { getTestBed, inject, TestBed } from "@angular/core/testing";
 
 import { of } from "rxjs";
-import { Category, IProduct } from "src/app/products/product";
+import { Category, IProduct } from '../products/product'
 import { ProductService } from "./product.service"
 /*class FakeApiService {
     // Implement the methods you want to overload here
@@ -175,7 +175,7 @@ afterEach(() => {
 
      const req = httpMock.expectOne(service.url);
      expect(req.request.method).toBe('POST');
-     //here the item is the response flushed , as the response body 
+     //here the item is the response flushed , as the response body
      req.flush(item);
 
      });

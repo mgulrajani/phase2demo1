@@ -15,7 +15,7 @@ import { CartComponent } from './cart/cart.component';
 import { TransformDataPipe } from './transform-data.pipe';
 import { RepeatPipe } from './repeat.pipe';
 import { ProductService } from '../app/shared/product.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NavBarComponent } from './navbar/navbar.component';
 import { EventsListComponent } from './events/events-list.component';
 import { EventDetailComponent } from './events/event-detail.component';
@@ -43,7 +43,7 @@ import { EmployeeSuggestionsComponent } from './employee/employee-suggestions.co
 import { GreetComponent } from './greet/greet.component';
 import { MenuComponent } from './home/menu.component';
 import { ShellComponent } from './home/shell.component';
-import { LoginComponent } from './user/login.component';
+import { ColorDirective, LoginComponent } from './user/login.component';
 import { GreetingComponent } from './greeting/greeting.component';
 import { CardListComponent } from './cards/cardlist.component';
 import { CardComponent } from './cards/card.component';
@@ -53,6 +53,19 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { ProductShellComponent } from './products/product-shell.component';
 import { MaterialModule } from './material-module/material-module.module';
+import { NavcComponent } from './navc/navc.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DashbrdComponent } from './dashbrd/dashbrd.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { ToastrModule } from 'ngx-toastr';
+import { RequestRespInterceptor } from './user/auth.interceptor';
 
 @NgModule({
 
@@ -101,7 +114,9 @@ import { MaterialModule } from './material-module/material-module.module';
     GreetingComponent,
     CardListComponent,
    CardComponent,
-
+   NavcComponent,
+   DashbrdComponent,
+  ColorDirective
 
 
 
@@ -110,6 +125,7 @@ import { MaterialModule } from './material-module/material-module.module';
   //imports mention the names of the modules on which my appmodule is dependent
   imports: [MaterialModule,
     FormsModule,
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
@@ -119,10 +135,25 @@ import { MaterialModule } from './material-module/material-module.module';
     //have to create AppEffects
     EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument(),
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService)
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryEventDbService),
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
 
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:RequestRespInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

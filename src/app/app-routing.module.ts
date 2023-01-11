@@ -91,7 +91,7 @@ const routes:Routes=[
 {
   path:'products',
   component:ProductsListComponent,
-  canActivate:[AuthGuard],
+ 
   loadChildren:()=>import('../app/product/product.module').then(m=>m.ProductModule)
  },
 {path:'',redirectTo:'welcome',pathMatch:'full'},

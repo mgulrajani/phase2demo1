@@ -24,6 +24,7 @@ ProductShellComponent,
     CommonModule,FormsModule,ReactiveFormsModule,
     ProductRoutingModule,
     StoreModule.forFeature('products', productReducer),
-    EffectsModule.forFeature([ProductEffects])]
+    EffectsModule.forFeature([ProductEffects])],
+    
 })
 export class ProductModule { }
